@@ -1,0 +1,3 @@
+/Users/danilishinyar/OOP/lab2_oop/menu/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/danilishinyar/OOP/lab2_oop/menu/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/danilishinyar/OOP/lab2_oop/menu/cmake-build-debug/CMakeFiles/LongNum_menu.dir

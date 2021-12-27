@@ -1,0 +1,4 @@
+/Users/danilishinyar/OOP/lab2_oop/LongNum_dynamic_overload/cmake-build-debug/CMakeFiles/test.dir
+/Users/danilishinyar/OOP/lab2_oop/LongNum_dynamic_overload/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/danilishinyar/OOP/lab2_oop/LongNum_dynamic_overload/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/danilishinyar/OOP/lab2_oop/LongNum_dynamic_overload/cmake-build-debug/CMakeFiles/LongNum.dir
