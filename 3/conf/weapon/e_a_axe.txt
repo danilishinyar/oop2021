@@ -1,0 +1,5 @@
+damage_ 20
+buf_damage 10
+debuf_damage 10
+speed -5
+max_hp 20

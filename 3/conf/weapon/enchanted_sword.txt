@@ -1,0 +1,3 @@
+damage_ 15
+buf_damage 30
+debuf_damage 10

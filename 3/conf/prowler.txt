@@ -1,0 +1,12 @@
+max_hp 120
+cur_hp 120
+damage 10
+speed 30
+lucky 0.7
+defence 0
+exp 0
+exp_level 100
+level 1
+hp_potions 0
+speed_potions 0
+lockpicks 3

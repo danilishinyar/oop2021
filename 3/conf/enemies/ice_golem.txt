@@ -1,0 +1,8 @@
+max_hp 60
+cur_hp 60
+damage 10
+speed 0.02
+exp 150
+hit_time 5
+affect_time 5
+affect_speed 5
