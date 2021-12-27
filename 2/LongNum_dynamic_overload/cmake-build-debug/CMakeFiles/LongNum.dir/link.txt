@@ -1,2 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/ar qc libLongNum.a CMakeFiles/LongNum.dir/LongNum.cpp.o
-/Library/Developer/CommandLineTools/usr/bin/ranlib libLongNum.a
