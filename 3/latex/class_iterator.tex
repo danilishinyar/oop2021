@@ -1,0 +1,88 @@
+\hypertarget{class_iterator}{}\doxysection{Iterator\texorpdfstring{$<$}{<} U, T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_iterator}\index{Iterator$<$ U, T $>$@{Iterator$<$ U, T $>$}}
+
+
+Класс итератор  
+
+
+
+
+{\ttfamily \#include $<$Characteristics.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_iterator_a7df2e00308b5f4e1196b1d5c0be4dc82}\label{class_iterator_a7df2e00308b5f4e1196b1d5c0be4dc82}} 
+{\bfseries Iterator} ()
+\begin{DoxyCompactList}\small\item\em Текущий элемент \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_iterator_ada6944487c7a63b80789af6907c8a0d1}{Iterator}} (\mbox{\hyperlink{struct_cell}{Cell}}$<$ U, T $>$ $\ast$ob)
+\begin{DoxyCompactList}\small\item\em Конструктор по умолчанию \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_cell}{Cell}}$<$ U, T $>$ \& \mbox{\hyperlink{class_iterator_aa1a9e64b675c42a18a3014f54b4a1e48}{operator$\ast$}} ()
+\begin{DoxyCompactList}\small\item\em Оператор разыменования указателя \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_iterator_afea91379b2fbe6f17d1b8f6fd28ea2cc}\label{class_iterator_afea91379b2fbe6f17d1b8f6fd28ea2cc}} 
+\mbox{\hyperlink{class_iterator}{Iterator}} \& {\bfseries operator++} ()
+\begin{DoxyCompactList}\small\item\em Оператор префиксного инкремента \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_iterator_a2cb845066bc4ca55c10cf2e7b25aeb19}\label{class_iterator_a2cb845066bc4ca55c10cf2e7b25aeb19}} 
+\mbox{\hyperlink{class_iterator}{Iterator}} \& {\bfseries operator++} (int)
+\begin{DoxyCompactList}\small\item\em Оператор постфиксного инкремента \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_iterator_a58c29443a47e76c74c44a32be243f2e5}\label{class_iterator_a58c29443a47e76c74c44a32be243f2e5}} 
+int {\bfseries operator==} (const \mbox{\hyperlink{class_iterator}{Iterator}} \&ptr) const
+\begin{DoxyCompactList}\small\item\em Оператор равенства \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_iterator_a44881bbd0db6060c90976be36c25663e}\label{class_iterator_a44881bbd0db6060c90976be36c25663e}} 
+int {\bfseries operator!=} (const \mbox{\hyperlink{class_iterator}{Iterator}} \&ptr) const
+\begin{DoxyCompactList}\small\item\em Оператор неравенства \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class U, class T$>$\newline
+class Iterator$<$ U, T $>$}
+Класс итератор 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em U} & тип данных ключа \\
+\hline
+{\em T} & тип данных значения \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_iterator_ada6944487c7a63b80789af6907c8a0d1}\label{class_iterator_ada6944487c7a63b80789af6907c8a0d1}} 
+\index{Iterator$<$ U, T $>$@{Iterator$<$ U, T $>$}!Iterator@{Iterator}}
+\index{Iterator@{Iterator}!Iterator$<$ U, T $>$@{Iterator$<$ U, T $>$}}
+\doxysubsubsection{\texorpdfstring{Iterator()}{Iterator()}}
+{\footnotesize\ttfamily template$<$class U , class T $>$ \\
+\mbox{\hyperlink{class_iterator}{Iterator}}$<$ U, T $>$\+::\mbox{\hyperlink{class_iterator}{Iterator}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_cell}{Cell}}$<$ U, T $>$ $\ast$}]{ob }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Конструктор по умолчанию 
+
+Конструктор 
+\begin{DoxyParams}{Parameters}
+{\em ob} & указатель на элемент таблицы \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_iterator_aa1a9e64b675c42a18a3014f54b4a1e48}\label{class_iterator_aa1a9e64b675c42a18a3014f54b4a1e48}} 
+\index{Iterator$<$ U, T $>$@{Iterator$<$ U, T $>$}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Iterator$<$ U, T $>$@{Iterator$<$ U, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily template$<$class U , class T $>$ \\
+\mbox{\hyperlink{struct_cell}{Cell}}$<$ U, T $>$ \& \mbox{\hyperlink{class_iterator}{Iterator}}$<$ U, T $>$\+::operator$\ast$}
+
+
+
+Оператор разыменования указателя 
+
+\begin{DoxyReturn}{Returns}
+ссылку на элемент таблицы 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Characteristics.\+h\end{DoxyCompactItemize}

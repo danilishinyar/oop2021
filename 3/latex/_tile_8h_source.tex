@@ -1,0 +1,28 @@
+\hypertarget{_tile_8h_source}{}\doxysection{Tile.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef LAB3\_REFACTORED\_TILE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define LAB3\_REFACTORED\_TILE\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}SFML/Graphics.hpp"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{keyword}{class }\mbox{\hyperlink{class_tile}{Tile}} \{}
+\DoxyCodeLine{6 \textcolor{keyword}{private}:}
+\DoxyCodeLine{7     sf::Vector2f coords;}
+\DoxyCodeLine{8     sf::RectangleShape rect;}
+\DoxyCodeLine{9     \textcolor{keywordtype}{int} type;\textcolor{comment}{//0-\/field 1-\/wall 2-\/enemy}}
+\DoxyCodeLine{10 \textcolor{keyword}{public}:}
+\DoxyCodeLine{11     \mbox{\hyperlink{class_tile}{Tile}}(sf::Vector2f coords, sf::Color color, \textcolor{keywordtype}{int} type);}
+\DoxyCodeLine{12     \mbox{\hyperlink{class_tile}{Tile}}();\textcolor{comment}{//default field tile constructor}}
+\DoxyCodeLine{13     \textcolor{comment}{//getters}}
+\DoxyCodeLine{14     sf::Vector2f get\_coords()\{ \textcolor{keywordflow}{return} this-\/>rect.getPosition(); \};}
+\DoxyCodeLine{15     sf::RectangleShape\& get\_rect()\{ \textcolor{keywordflow}{return} this-\/>rect; \};}
+\DoxyCodeLine{16     \textcolor{keywordtype}{int} get\_type()\textcolor{keyword}{ const}\{ \textcolor{keywordflow}{return} this-\/>type; \};}
+\DoxyCodeLine{17     \textcolor{comment}{//setters}}
+\DoxyCodeLine{18     \textcolor{keywordtype}{void} set\_coords(sf::Vector2f coords1)\{ this-\/>rect.setPosition(coords1); \};}
+\DoxyCodeLine{19     \textcolor{keywordtype}{void} set\_type(\textcolor{keywordtype}{int} i)\{ this-\/>type = i; \};}
+\DoxyCodeLine{20 \};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//LAB3\_REFACTORED\_TILE\_H}}
+
+\end{DoxyCode}

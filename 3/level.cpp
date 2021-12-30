@@ -115,10 +115,10 @@ sf::Vector2f Level::get_prowler_coords() {
         for(int j = 0; j < this->map_tiles[i].size(); j++)
             if(this->map_string[i * this->map_tiles.size() + j] == '@')
                 return {static_cast<float>(j) * 100.f, static_cast<float>(i) * 100.f};
-    return sf::Vector2f{0.f, 0.f};
+    return {0.f, 0.f};
 }
 
-Item* Level::get_item_by_coords(sf::Vector2f coords) {
+__attribute__((unused)) Item* Level::get_item_by_coords(sf::Vector2f coords) {
     for(auto &i: this->items){
         int a = static_cast<int>(i->get_tile().get_coords().x) / 100;
         int b = static_cast<int>(i->get_tile().get_coords().y) / 100;
@@ -132,18 +132,12 @@ Level::Level(Level&& a) noexcept{
     this->map_tiles = a.map_tiles;
     this->map_string = a.map_string;
     for(auto &i: a.items){
-        Item* tmp = i->clone();
-        this->items.push_back(tmp);
+        this->items.push_back(i);
     }
-    for(auto &i: a.items)
-        delete i;
     a.items.clear();
     for(auto &i: a.enemies){
-        Enemy* tmp = i->clone();
-        this->enemies.push_back(tmp);
+        this->enemies.push_back(i);
     }
-    for(auto &i: a.enemies)
-        delete i;
     a.enemies.clear();
 }
 
@@ -154,8 +148,8 @@ Level::~Level(){
     }
     this->items.clear();
     for(auto & enemy : this->enemies) {
-        auto tmp = enemy;
-        delete tmp;
+        delete enemy->get_item();
+        delete enemy;
     }
     this->enemies.clear();
 }
@@ -174,11 +168,10 @@ Level::Level(const Level& a){
 }
 
 void Level::set_tile(Tile& tile) {
-    for(int i = 0; i < this->map_tiles.size(); i++)
-        for(int j = 0; j < this->map_tiles[i].size(); j++) {
-
-            if (this->map_tiles[i][j].get_coords() == tile.get_coords()) {
-                this->map_tiles[i][j] = tile;
+    for(auto & map_tile : this->map_tiles)
+        for(auto & j : map_tile) {
+            if (j.get_coords() == tile.get_coords()) {
+                j = tile;
             }
         }
 }

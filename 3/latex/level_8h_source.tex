@@ -1,0 +1,64 @@
+\hypertarget{level_8h_source}{}\doxysection{level.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#ifndef LAB3\_REFACTORED\_LEVEL\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define LAB3\_REFACTORED\_LEVEL\_H}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}SFML/Graphics.hpp"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}Enemy.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}Item.h"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_level}{Level}} \{}
+\DoxyCodeLine{9 \textcolor{keyword}{private}:}
+\DoxyCodeLine{10     \textcolor{comment}{//enemies}}
+\DoxyCodeLine{11     std::vector<Enemy> enemies;}
+\DoxyCodeLine{12     \textcolor{comment}{//map\_tiles}}
+\DoxyCodeLine{13     std::vector<std::vector<Tile>> map\_tiles;}
+\DoxyCodeLine{14     \textcolor{comment}{//map\_string}}
+\DoxyCodeLine{15     std::string map\_string;}
+\DoxyCodeLine{16     std::vector<Item*> items;}
+\DoxyCodeLine{17 \textcolor{keyword}{public}:}
+\DoxyCodeLine{18     \mbox{\hyperlink{class_level}{Level}}(\textcolor{keywordtype}{int} n);}
+\DoxyCodeLine{19     \mbox{\hyperlink{class_level}{Level}}();}
+\DoxyCodeLine{20     \mbox{\hyperlink{class_level}{Level}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_level}{Level}}\& a)\{}
+\DoxyCodeLine{21         this-\/>enemies = a.enemies;}
+\DoxyCodeLine{22         this-\/>map\_tiles = a.map\_tiles;}
+\DoxyCodeLine{23         this-\/>map\_string = a.map\_string;}
+\DoxyCodeLine{24         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \&i: a.items)\{}
+\DoxyCodeLine{25             \mbox{\hyperlink{class_item}{Item}}* tmp = i-\/>\mbox{\hyperlink{class_item_a4bfb47cbeb69689247d9ad06bf11ae0d}{clone}}();}
+\DoxyCodeLine{26             this-\/>items.push\_back(tmp);}
+\DoxyCodeLine{27         \}}
+\DoxyCodeLine{28     \}}
+\DoxyCodeLine{29     \mbox{\hyperlink{class_level}{Level}}(\mbox{\hyperlink{class_level}{Level}}\&\& a)\{}
+\DoxyCodeLine{30         this-\/>enemies = a.enemies;}
+\DoxyCodeLine{31         this-\/>map\_tiles = a.map\_tiles;}
+\DoxyCodeLine{32         this-\/>map\_string = a.map\_string;}
+\DoxyCodeLine{33         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \&i: a.items)\{}
+\DoxyCodeLine{34             \mbox{\hyperlink{class_item}{Item}}* tmp = i-\/>\mbox{\hyperlink{class_item_a4bfb47cbeb69689247d9ad06bf11ae0d}{clone}}();}
+\DoxyCodeLine{35             this-\/>items.push\_back(tmp);}
+\DoxyCodeLine{36         \}}
+\DoxyCodeLine{37         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \&i: a.items)\{}
+\DoxyCodeLine{38             \textcolor{keyword}{delete} i;}
+\DoxyCodeLine{39         \}}
+\DoxyCodeLine{40         a.items.clear();}
+\DoxyCodeLine{41     \}}
+\DoxyCodeLine{42     \mbox{\hyperlink{class_level}{\string~Level}}()\{}
+\DoxyCodeLine{43         \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} \& item : this-\/>items) \{}
+\DoxyCodeLine{44             \textcolor{keyword}{auto} tmp = item;}
+\DoxyCodeLine{45             \textcolor{keyword}{delete} tmp;}
+\DoxyCodeLine{46         \}}
+\DoxyCodeLine{47         this-\/>items.clear();}
+\DoxyCodeLine{48     \};}
+\DoxyCodeLine{49     \textcolor{keywordtype}{int} get\_tile\_type\_by\_coords(sf::Vector2f coords);}
+\DoxyCodeLine{50     sf::Vector2f get\_prowler\_coords();}
+\DoxyCodeLine{51     std::vector<std::vector<Tile>>\& get\_map\_tiles()\{ \textcolor{keywordflow}{return} this-\/>map\_tiles; \};}
+\DoxyCodeLine{52     std::vector<Enemy>\& get\_enemies()\{ \textcolor{keywordflow}{return} this-\/>enemies; \};}
+\DoxyCodeLine{53     std::vector<Item*>\& get\_items()\{ \textcolor{keywordflow}{return} this-\/>items; \};}
+\DoxyCodeLine{54     \mbox{\hyperlink{class_item}{Item}}* get\_item\_by\_coords(sf::Vector2f coords);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//LAB3\_REFACTORED\_LEVEL\_H}}
+
+\end{DoxyCode}

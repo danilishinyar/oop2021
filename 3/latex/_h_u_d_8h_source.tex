@@ -1,0 +1,23 @@
+\hypertarget{_h_u_d_8h_source}{}\doxysection{HUD.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef LAB3\_REFACTORED\_HUD\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define LAB3\_REFACTORED\_HUD\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}SFML/Graphics.hpp"{}}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}Characteristics.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}Item.h"{}}}
+\DoxyCodeLine{6 \textcolor{keyword}{class }\mbox{\hyperlink{class_h_u_d}{HUD}} \{}
+\DoxyCodeLine{7 \textcolor{keyword}{private}:}
+\DoxyCodeLine{8     std::string text;}
+\DoxyCodeLine{9     \mbox{\hyperlink{class_characteristics}{Characteristics<std::string, float>}}* tb;}
+\DoxyCodeLine{10 \textcolor{keyword}{public}:}
+\DoxyCodeLine{11     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_h_u_d}{HUD}}(\mbox{\hyperlink{class_characteristics}{Characteristics<std::string, float>}}* tb);}
+\DoxyCodeLine{12     \mbox{\hyperlink{class_h_u_d}{HUD}}();}
+\DoxyCodeLine{13     std::string get\_text(\mbox{\hyperlink{class_item}{Item}}* item);}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//LAB3\_REFACTORED\_HUD\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,200 @@
+\hypertarget{_characteristics_8h_source}{}\doxysection{Characteristics.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef LAB3\_REFACTORED\_CHARACTERISTICS\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define LAB3\_REFACTORED\_CHARACTERISTICS\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include<iostream>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 }
+\DoxyCodeLine{14 \textcolor{keyword}{template} <\textcolor{keyword}{class} U, \textcolor{keyword}{class} T>}
+\DoxyCodeLine{15 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_cell}{Cell}}\{}
+\DoxyCodeLine{16     U title;}
+\DoxyCodeLine{17     T value;}
+\DoxyCodeLine{18 \};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{26 \textcolor{keyword}{template} <\textcolor{keyword}{class} U, \textcolor{keyword}{class} T>}
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{class_iterator}{Iterator}}\{}
+\DoxyCodeLine{28 \textcolor{keyword}{private}:}
+\DoxyCodeLine{29     \mbox{\hyperlink{struct_cell}{Cell<U, T>}}* cur;}
+\DoxyCodeLine{30 \textcolor{keyword}{public}:}
+\DoxyCodeLine{31     \mbox{\hyperlink{class_iterator_a7df2e00308b5f4e1196b1d5c0be4dc82}{Iterator}}(): cur(nullptr)\{ \};}
+\DoxyCodeLine{36     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_iterator_ada6944487c7a63b80789af6907c8a0d1}{Iterator}}(\mbox{\hyperlink{struct_cell}{Cell<U, T>}}* ob): cur(ob)\{ \};}
+\DoxyCodeLine{41     \mbox{\hyperlink{struct_cell}{Cell<U, T>}}\& \mbox{\hyperlink{class_iterator_aa1a9e64b675c42a18a3014f54b4a1e48}{operator *}}();}
+\DoxyCodeLine{45     \mbox{\hyperlink{class_iterator}{Iterator}}\& \mbox{\hyperlink{class_iterator_afea91379b2fbe6f17d1b8f6fd28ea2cc}{operator ++}}();}
+\DoxyCodeLine{49     \mbox{\hyperlink{class_iterator}{Iterator}}\& \mbox{\hyperlink{class_iterator_afea91379b2fbe6f17d1b8f6fd28ea2cc}{operator ++}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{53     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_iterator_a58c29443a47e76c74c44a32be243f2e5}{operator ==}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_iterator}{Iterator}}\& ptr) \textcolor{keyword}{const};}
+\DoxyCodeLine{57     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_iterator_a44881bbd0db6060c90976be36c25663e}{operator !=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_iterator}{Iterator}}\& ptr) \textcolor{keyword}{const};}
+\DoxyCodeLine{58 \};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 }
+\DoxyCodeLine{66 \textcolor{keyword}{template} <\textcolor{keyword}{class} U, \textcolor{keyword}{class} T>}
+\DoxyCodeLine{67 \textcolor{keyword}{class }\mbox{\hyperlink{class_characteristics}{Characteristics}}\{}
+\DoxyCodeLine{68 \textcolor{keyword}{private}:}
+\DoxyCodeLine{69     \mbox{\hyperlink{struct_cell}{Cell<U, T>}}* tb;}
+\DoxyCodeLine{70     \textcolor{keywordtype}{int} size; }
+\DoxyCodeLine{71     \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{class_iterator}{Iterator}}<U, T>; }
+\DoxyCodeLine{72 \textcolor{keyword}{public}:}
+\DoxyCodeLine{76     \mbox{\hyperlink{class_iterator}{Iterator<U, T>}} \mbox{\hyperlink{class_characteristics_ab10b92b2071cfb290355900535198685}{begin}}();}
+\DoxyCodeLine{80     \mbox{\hyperlink{class_iterator}{Iterator<U, T>}} \mbox{\hyperlink{class_characteristics_a869095a364e8a31ad6b0856a54b58e57}{end}}();}
+\DoxyCodeLine{84     \mbox{\hyperlink{class_characteristics_a59ff88bb1f97ccc4882f59e6811b67e7}{Characteristics}}(): tb(nullptr), size(0)\{\};}
+\DoxyCodeLine{89     \mbox{\hyperlink{class_characteristics_a59ff88bb1f97ccc4882f59e6811b67e7}{Characteristics}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_characteristics}{Characteristics}}\& a);}
+\DoxyCodeLine{94     \mbox{\hyperlink{class_characteristics_a59ff88bb1f97ccc4882f59e6811b67e7}{Characteristics}}(\mbox{\hyperlink{class_characteristics}{Characteristics}}\&\& a) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{99     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_characteristics_a59ff88bb1f97ccc4882f59e6811b67e7}{Characteristics}}(\textcolor{keyword}{const} std::string\& filename);}
+\DoxyCodeLine{103     \mbox{\hyperlink{class_characteristics_a763ceec2678f747dea8744c271c3a79b}{\string~Characteristics}}()\{}
+\DoxyCodeLine{104         \textcolor{keywordflow}{if}(this-\/>tb != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{105             \textcolor{keyword}{delete}[] tb;}
+\DoxyCodeLine{106     \}}
+\DoxyCodeLine{111     [[nodiscard]] \mbox{\hyperlink{struct_cell}{Cell<U, T>}}* \mbox{\hyperlink{class_characteristics_a54b2e792dec53db4c46b099ec5374479}{get}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{116     [[nodiscard]] \textcolor{keywordtype}{int} \mbox{\hyperlink{class_characteristics_ae2abc7db2672886f2091f1d7b246ce9b}{get\_size}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{122     [[nodiscard]] T \mbox{\hyperlink{class_characteristics_a953da693ee48c24fdea8a73b06056eb7}{get\_val}}(\textcolor{keyword}{const} std::string\& title);}
+\DoxyCodeLine{128     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_characteristics_ab5da6b82e7e112cceba2c6ff643c13fa}{set}}(\textcolor{keyword}{const} std::string\& title, T value);}
+\DoxyCodeLine{133     \mbox{\hyperlink{class_characteristics}{Characteristics}}\& \mbox{\hyperlink{class_characteristics_a78fbf256919ee764bfd6489dcefbe211}{operator=}}(\mbox{\hyperlink{class_characteristics}{Characteristics}} \&\&a) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{138     \mbox{\hyperlink{class_characteristics}{Characteristics}}\& \mbox{\hyperlink{class_characteristics_a78fbf256919ee764bfd6489dcefbe211}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_characteristics}{Characteristics}} \&a);}
+\DoxyCodeLine{139 \};}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 \textcolor{keyword}{template} <\textcolor{keyword}{class} U, \textcolor{keyword}{class} T>}
+\DoxyCodeLine{144 \mbox{\hyperlink{class_characteristics_a59ff88bb1f97ccc4882f59e6811b67e7}{Characteristics<U, T>::Characteristics}}(\textcolor{keyword}{const} std::string\& filename) \{}
+\DoxyCodeLine{145     std::ifstream file;}
+\DoxyCodeLine{146     file.open(\textcolor{stringliteral}{"{}/Users/danilishinyar/OOP/lab3\_refactored/conf/"{}} + filename + \textcolor{stringliteral}{"{}.txt"{}});}
+\DoxyCodeLine{147     std::string line;}
+\DoxyCodeLine{148     \textcolor{keywordtype}{int} quota = 5;}
+\DoxyCodeLine{149     this-\/>size = 0;}
+\DoxyCodeLine{150     this-\/>tb = \textcolor{keyword}{new} \mbox{\hyperlink{struct_cell}{Cell<U, T>}}[quota];}
+\DoxyCodeLine{151     \textcolor{keywordflow}{if}(file.is\_open())\{}
+\DoxyCodeLine{152         T tmp\_value;}
+\DoxyCodeLine{153         U tmp\_key;}
+\DoxyCodeLine{154         \textcolor{keywordtype}{int} b = 1;}
+\DoxyCodeLine{155         \textcolor{keywordtype}{int} i = 0;}
+\DoxyCodeLine{156         \mbox{\hyperlink{struct_cell}{Cell<U, T>}} tmp\_cell;}
+\DoxyCodeLine{157         \textcolor{keywordflow}{while}(file >> tmp\_key >> tmp\_value)\{}
+\DoxyCodeLine{158             this-\/>size++;}
+\DoxyCodeLine{159             \textcolor{keywordflow}{if}(this-\/>size > quota * b)\{}
+\DoxyCodeLine{160                 b++;}
+\DoxyCodeLine{161                 \textcolor{keyword}{auto}* tmp = \textcolor{keyword}{new} \mbox{\hyperlink{struct_cell}{Cell<U, T>}}[b * quota];}
+\DoxyCodeLine{162                 memcpy(tmp, this-\/>tb, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_cell}{Cell<U, T>}}) * quota * (b -\/ 1));}
+\DoxyCodeLine{163                 \textcolor{keyword}{delete}[] this-\/>tb;}
+\DoxyCodeLine{164                 this-\/>tb = tmp;}
+\DoxyCodeLine{165             \}}
+\DoxyCodeLine{166             tmp\_cell.title = tmp\_key;}
+\DoxyCodeLine{167             tmp\_cell.value = tmp\_value;}
+\DoxyCodeLine{168             this-\/>tb[i] = tmp\_cell;}
+\DoxyCodeLine{169             i++;}
+\DoxyCodeLine{170         \}}
+\DoxyCodeLine{171         file.close();}
+\DoxyCodeLine{172     \}}
+\DoxyCodeLine{173     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{174         \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}unable to open conf file"{}});}
+\DoxyCodeLine{175 \}}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178 \textcolor{keyword}{template} <\textcolor{keyword}{class} U, \textcolor{keyword}{class} T>}
+\DoxyCodeLine{179 \mbox{\hyperlink{class_characteristics_a59ff88bb1f97ccc4882f59e6811b67e7}{Characteristics<U, T>::Characteristics}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_characteristics}{Characteristics<U, T>}} \&a) \{}
+\DoxyCodeLine{180     size = a.size;}
+\DoxyCodeLine{181     tb = \textcolor{keyword}{new} \mbox{\hyperlink{struct_cell}{Cell<U, T>}}[(a.size / 5 + 1) * 5];}
+\DoxyCodeLine{182     memcpy(tb, a.tb, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_cell}{Cell<U, T>}}) * a.size);}
+\DoxyCodeLine{183 \}}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185 \textcolor{keyword}{template} <\textcolor{keyword}{class} U, \textcolor{keyword}{class} T>}
+\DoxyCodeLine{186 \mbox{\hyperlink{class_characteristics_a59ff88bb1f97ccc4882f59e6811b67e7}{Characteristics<U, T>::Characteristics}}(\mbox{\hyperlink{class_characteristics}{Characteristics<U, T>}} \&\&a) \textcolor{keyword}{noexcept}\{}
+\DoxyCodeLine{187     size = a.size;}
+\DoxyCodeLine{188     tb = a.tb;}
+\DoxyCodeLine{189     a.tb = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{190 \}}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192 \textcolor{keyword}{template} <\textcolor{keyword}{class} U, \textcolor{keyword}{class} T>}
+\DoxyCodeLine{193 \mbox{\hyperlink{struct_cell}{Cell<U, T>}}* \mbox{\hyperlink{class_characteristics_a54b2e792dec53db4c46b099ec5374479}{Characteristics<U, T>::get}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{194     \textcolor{keywordflow}{return} this-\/>tb;}
+\DoxyCodeLine{195 \}}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197 \textcolor{keyword}{template} <\textcolor{keyword}{class} U, \textcolor{keyword}{class} T>}
+\DoxyCodeLine{198 \textcolor{keywordtype}{int} \mbox{\hyperlink{class_characteristics_ae2abc7db2672886f2091f1d7b246ce9b}{Characteristics<U, T>::get\_size}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{199     \textcolor{keywordflow}{return} this-\/>size;}
+\DoxyCodeLine{200 \}}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202 \textcolor{keyword}{template} <\textcolor{keyword}{class} U, \textcolor{keyword}{class} T>}
+\DoxyCodeLine{203 \mbox{\hyperlink{class_iterator}{Iterator<U, T>}} \mbox{\hyperlink{class_characteristics_ab10b92b2071cfb290355900535198685}{Characteristics<U, T>::begin}}()\{}
+\DoxyCodeLine{204     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_iterator}{Iterator<U, T>}}(this-\/>tb);}
+\DoxyCodeLine{205 \}}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207 \textcolor{keyword}{template} <\textcolor{keyword}{class} U, \textcolor{keyword}{class} T>}
+\DoxyCodeLine{208 \mbox{\hyperlink{class_iterator}{Iterator<U, T>}} \mbox{\hyperlink{class_characteristics_a869095a364e8a31ad6b0856a54b58e57}{Characteristics<U, T>::end}}()\{}
+\DoxyCodeLine{209     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_iterator}{Iterator<U, T>}}(this-\/>tb + this-\/>size);}
+\DoxyCodeLine{210 \}}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212 \textcolor{keyword}{template} <\textcolor{keyword}{class} U, \textcolor{keyword}{class} T>}
+\DoxyCodeLine{213 \mbox{\hyperlink{struct_cell}{Cell<U, T>}}\& \mbox{\hyperlink{class_iterator_aa1a9e64b675c42a18a3014f54b4a1e48}{Iterator<U, T>::operator*}}() \{}
+\DoxyCodeLine{214     \textcolor{keywordflow}{return} *cur;}
+\DoxyCodeLine{215 \}}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217 \textcolor{keyword}{template} <\textcolor{keyword}{class} U, \textcolor{keyword}{class} T>}
+\DoxyCodeLine{218 \mbox{\hyperlink{class_iterator}{Iterator<U, T>}}\& \mbox{\hyperlink{class_iterator_afea91379b2fbe6f17d1b8f6fd28ea2cc}{Iterator<U, T>::operator ++}}()\{}
+\DoxyCodeLine{219     this-\/>cur++;}
+\DoxyCodeLine{220     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{221 \}}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223 \textcolor{keyword}{template} <\textcolor{keyword}{class} U, \textcolor{keyword}{class} T>}
+\DoxyCodeLine{224 \mbox{\hyperlink{class_iterator}{Iterator<U, T>}}\& \mbox{\hyperlink{class_iterator_afea91379b2fbe6f17d1b8f6fd28ea2cc}{Iterator<U, T>::operator ++}}(\textcolor{keywordtype}{int})\{}
+\DoxyCodeLine{225     \mbox{\hyperlink{class_iterator}{Iterator<U, T>}} tmp;}
+\DoxyCodeLine{226     tmp.cur = this-\/>cur;}
+\DoxyCodeLine{227     tmp.cur++;}
+\DoxyCodeLine{228     \textcolor{keywordflow}{return} tmp;}
+\DoxyCodeLine{229 \}}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231 \textcolor{keyword}{template} <\textcolor{keyword}{class} U, \textcolor{keyword}{class} T>}
+\DoxyCodeLine{232 \textcolor{keywordtype}{int} \mbox{\hyperlink{class_iterator_a58c29443a47e76c74c44a32be243f2e5}{Iterator<U, T>::operator ==}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_iterator}{Iterator<U, T>}}\& ptr)\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{233     \textcolor{keywordflow}{return} ptr.cur == this-\/>cur;}
+\DoxyCodeLine{234 \}}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236 \textcolor{keyword}{template} <\textcolor{keyword}{class} U, \textcolor{keyword}{class} T>}
+\DoxyCodeLine{237 \textcolor{keywordtype}{int} \mbox{\hyperlink{class_iterator_a44881bbd0db6060c90976be36c25663e}{Iterator<U, T>::operator !=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_iterator}{Iterator<U, T>}}\& ptr)\textcolor{keyword}{ const}\{}
+\DoxyCodeLine{238     \textcolor{keywordflow}{return} ptr.cur != this-\/>cur;}
+\DoxyCodeLine{239 \}}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241 \textcolor{keyword}{template} <\textcolor{keyword}{class} U, \textcolor{keyword}{class} T>}
+\DoxyCodeLine{242 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_characteristics_ab5da6b82e7e112cceba2c6ff643c13fa}{Characteristics<U, T>::set}}(\textcolor{keyword}{const} std::string\& title, T value)\{}
+\DoxyCodeLine{243     \mbox{\hyperlink{class_iterator}{Iterator<U, T>}} it;}
+\DoxyCodeLine{244     \textcolor{keywordflow}{for}(it = this-\/>begin(); it != this-\/>end();++it)}
+\DoxyCodeLine{245         \textcolor{keywordflow}{if}(title == (*it).title)}
+\DoxyCodeLine{246             (*it).value = value;}
+\DoxyCodeLine{247 \}}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249 \textcolor{keyword}{template} <\textcolor{keyword}{class} U, \textcolor{keyword}{class} T>}
+\DoxyCodeLine{250 T \mbox{\hyperlink{class_characteristics_a953da693ee48c24fdea8a73b06056eb7}{Characteristics<U, T>::get\_val}}(\textcolor{keyword}{const} std::string\& title) \{}
+\DoxyCodeLine{251     \mbox{\hyperlink{class_iterator}{Iterator<U, T>}} it;}
+\DoxyCodeLine{252     \textcolor{keywordflow}{for}(it = this-\/>begin(); it != this-\/>end();++it)}
+\DoxyCodeLine{253         \textcolor{keywordflow}{if}(title == (*it).title)}
+\DoxyCodeLine{254             \textcolor{keywordflow}{return}((*it).value);}
+\DoxyCodeLine{255     \textcolor{keywordflow}{throw} std::runtime\_error(\textcolor{stringliteral}{"{}invalid title in table"{}});}
+\DoxyCodeLine{256 \}}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258 \textcolor{keyword}{template} <\textcolor{keyword}{class} U, \textcolor{keyword}{class} T>}
+\DoxyCodeLine{259 \mbox{\hyperlink{class_characteristics}{Characteristics<U, T>}}\& \mbox{\hyperlink{class_characteristics_a78fbf256919ee764bfd6489dcefbe211}{Characteristics<U, T>::operator=}}(\mbox{\hyperlink{class_characteristics}{Characteristics<U, T>}} \&\&a) \textcolor{keyword}{noexcept}\{}
+\DoxyCodeLine{260     \textcolor{keywordflow}{if}(\textcolor{keyword}{this} == \&a)}
+\DoxyCodeLine{261         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{262     \textcolor{keyword}{delete}[] tb;}
+\DoxyCodeLine{263     size = a.size;}
+\DoxyCodeLine{264     tb = a.tb;}
+\DoxyCodeLine{265     a.size = 0;}
+\DoxyCodeLine{266     a.tb = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{267     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{268 \}}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270 \textcolor{keyword}{template} <\textcolor{keyword}{class} U, \textcolor{keyword}{class} T>}
+\DoxyCodeLine{271 \mbox{\hyperlink{class_characteristics}{Characteristics<U, T>}}\& \mbox{\hyperlink{class_characteristics_a78fbf256919ee764bfd6489dcefbe211}{Characteristics<U, T>::operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_characteristics}{Characteristics<U, T>}} \&a) \{}
+\DoxyCodeLine{272     \textcolor{keywordflow}{if}(\textcolor{keyword}{this} == \&a)}
+\DoxyCodeLine{273         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{274     size = a.size;}
+\DoxyCodeLine{275     \textcolor{keyword}{delete}[] tb;}
+\DoxyCodeLine{276     tb = \textcolor{keyword}{new} \mbox{\hyperlink{struct_cell}{Cell<U, T>}}[a.size];}
+\DoxyCodeLine{277     memcpy(tb, a.tb, a.size * \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_cell}{Cell<U, T>}}));}
+\DoxyCodeLine{278     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{279 \}}
+\DoxyCodeLine{280 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//LAB3\_REFACTORED\_CHARACTERISTICS\_H}}
+
+\end{DoxyCode}

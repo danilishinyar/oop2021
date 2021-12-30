@@ -54,7 +54,7 @@ public:
 
 class Enemy_human: public Enemy{
 public:
-    Enemy_human(sf::Vector2f coords, char sign, std::string name, Item* item, sf::Texture* texture):Enemy(coords, sign, name, item, texture){};
+    Enemy_human(sf::Vector2f coords, char sign, const std::string& name, Item* item, sf::Texture* texture):Enemy(coords, sign, name, item, texture){};
     Enemy_human* clone() override { return new Enemy_human(*this); };
     void restart_affect_clock() override {};
     float get_affect_time() override { return  0.f; };
@@ -64,12 +64,12 @@ public:
 };
 
 
-class Enemy_insect: public Enemy{//damage for 2 sec
+class Enemy_insect: public Enemy{
 private:
     sf::Clock affect_clock;
     bool affect_state;
 public:
-    Enemy_insect(sf::Vector2f coords, char sign, std::string name, Item* item, sf::Texture* texture):Enemy(coords, sign, name, item, texture){
+    Enemy_insect(sf::Vector2f coords, char sign, const std::string& name, Item* item, sf::Texture* texture):Enemy(coords, sign, name, item, texture){
       this->affect_state = false;
     };
     void set_affect_state(bool a) override { this->affect_state = a;}
@@ -82,14 +82,14 @@ public:
 };
 
 
-class Enemy_ice: public Enemy{//speed to 5
+class Enemy_ice: public Enemy{
 private:
     sf::Clock affect_clock;
     bool affect_state;
     bool worked_state;
     bool cancel_state;
 public:
-    Enemy_ice(sf::Vector2f coords, char sign, std::string name, Item* item, sf::Texture* texture):Enemy(coords, sign, name, item, texture){
+    Enemy_ice(sf::Vector2f coords, char sign, const std::string& name, Item* item, sf::Texture* texture):Enemy(coords, sign, name, item, texture){
         this->affect_state = false;
         this->worked_state = false;
         this->cancel_state = false;

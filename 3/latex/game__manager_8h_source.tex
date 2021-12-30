@@ -1,0 +1,50 @@
+\hypertarget{game__manager_8h_source}{}\doxysection{game\+\_\+manager.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#ifndef LAB3\_REFACTORED\_GAME\_MANAGER\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define LAB3\_REFACTORED\_GAME\_MANAGER\_H}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}SFML/Graphics.hpp"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}Prowler.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}level.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}time.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}HUD.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_game__manager}{Game\_manager}} \{}
+\DoxyCodeLine{11 \textcolor{keyword}{private}:}
+\DoxyCodeLine{15     sf::Clock clock1;}
+\DoxyCodeLine{16     \textcolor{comment}{//prowler}}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_prowler}{Prowler}} prowler;}
+\DoxyCodeLine{18     \textcolor{comment}{//levels}}
+\DoxyCodeLine{19     std::vector<Level> levels;}
+\DoxyCodeLine{20     \textcolor{comment}{//cur level}}
+\DoxyCodeLine{21     \textcolor{keywordtype}{int} cur\_level;}
+\DoxyCodeLine{22     \textcolor{comment}{//game window}}
+\DoxyCodeLine{23     sf::RenderWindow window;}
+\DoxyCodeLine{24     \textcolor{comment}{//keys}}
+\DoxyCodeLine{25     \mbox{\hyperlink{class_h_u_d}{HUD}} hud;}
+\DoxyCodeLine{26     \textcolor{keywordtype}{bool} UP;}
+\DoxyCodeLine{27     \textcolor{keywordtype}{bool} DOWN;}
+\DoxyCodeLine{28     \textcolor{keywordtype}{bool} LEFT;}
+\DoxyCodeLine{29     \textcolor{keywordtype}{bool} RIGHT;}
+\DoxyCodeLine{30     \textcolor{keywordtype}{bool} HIT;}
+\DoxyCodeLine{31     \textcolor{keywordtype}{bool} INTERACT;}
+\DoxyCodeLine{32     \textcolor{keywordtype}{bool} NUM1;}
+\DoxyCodeLine{33     \textcolor{keywordtype}{bool} NUM2;}
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} handle\_input(sf::Keyboard::Key key, \textcolor{keywordtype}{bool} is\_pressed);}
+\DoxyCodeLine{35 \textcolor{keyword}{public}:}
+\DoxyCodeLine{36     \mbox{\hyperlink{class_game__manager}{Game\_manager}}();}
+\DoxyCodeLine{37     \mbox{\hyperlink{class_item}{Item}}* player\_near\_item();}
+\DoxyCodeLine{38     \textcolor{keywordtype}{void} choose\_event();\textcolor{comment}{//chooses what to do (close/press/release key)}}
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} update\_player(sf::Time deltaTime);\textcolor{comment}{//updating movement and etc}}
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} update\_enemy(sf::Time deltaTime);\textcolor{comment}{//updating movement and etc}}
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} render();\textcolor{comment}{//prints all stuff}}
+\DoxyCodeLine{42     \textcolor{keywordtype}{void} run();}
+\DoxyCodeLine{43     \textcolor{keywordtype}{void} change\_level();}
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} equip\_item();}
+\DoxyCodeLine{45 \};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//LAB3\_REFACTORED\_GAME\_MANAGER\_H}}
+
+\end{DoxyCode}

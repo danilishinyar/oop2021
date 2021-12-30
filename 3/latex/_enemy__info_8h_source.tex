@@ -1,0 +1,32 @@
+\hypertarget{_enemy__info_8h_source}{}\doxysection{Enemy\+\_\+info.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef LAB3\_REFACTORED\_ENEMY\_INFO\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define LAB3\_REFACTORED\_ENEMY\_INFO\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include "{}SFML/Graphics.hpp"{}}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{keyword}{class }\mbox{\hyperlink{class_enemy__info}{Enemy\_info}} \{}
+\DoxyCodeLine{6 \textcolor{keyword}{private}:}
+\DoxyCodeLine{7     sf::RectangleShape cur\_health\_bar;}
+\DoxyCodeLine{8     sf::RectangleShape max\_health\_bar;}
+\DoxyCodeLine{9 \textcolor{keyword}{public}:}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_enemy__info}{Enemy\_info}}(sf::Vector2f coords);}
+\DoxyCodeLine{12     \textcolor{comment}{//Enemy\_info();}}
+\DoxyCodeLine{13     sf::RectangleShape get\_cur\_hp() \{ \textcolor{keywordflow}{return} this-\/>cur\_health\_bar; \};}
+\DoxyCodeLine{14     sf::RectangleShape get\_max\_hp() \{ \textcolor{keywordflow}{return} this-\/>max\_health\_bar; \};}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     \textcolor{keywordtype}{void} set\_coords(sf::Vector2f coords)\{}
+\DoxyCodeLine{17         this-\/>max\_health\_bar.setPosition(coords.x, coords.y -\/ 20.f);}
+\DoxyCodeLine{18         this-\/>cur\_health\_bar.setPosition(coords.x, coords.y -\/ 20.f);}
+\DoxyCodeLine{19     \};}
+\DoxyCodeLine{20     \textcolor{keywordtype}{void} set\_width(\textcolor{keywordtype}{float} delta\_width)\{}
+\DoxyCodeLine{21         this-\/>cur\_health\_bar.setSize(sf::Vector2f(100.f * delta\_width, this-\/>cur\_health\_bar.getSize().y));}
+\DoxyCodeLine{22     \};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//LAB3\_REFACTORED\_ENEMY\_INFO\_H}}
+
+\end{DoxyCode}

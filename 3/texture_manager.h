@@ -12,6 +12,8 @@ private:
 public:
     Texture_manager();
     ~Texture_manager();
+    Texture_manager(const Texture_manager& a);
+    Texture_manager(Texture_manager&& a);
     sf::Texture* get_floor_texture();
     sf::Texture* get_wall_texture();
     sf::Texture* get_enemy_texture(char sign);

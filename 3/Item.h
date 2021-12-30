@@ -199,6 +199,7 @@ public:
     Artifact_armor(const std::string& name, std::string description, sf::Vector2f coords, int type, sf::Texture* texture): Armor(name, std::move(description), coords, type, texture) {};
 
     Artifact_armor* clone() override{ return new Artifact_armor(*this); }
+    ~Artifact_armor() override = default;
 };
 
 
@@ -206,6 +207,7 @@ class Artifact_weapon: public virtual Weapon, public Artifact{
 public:
     Artifact_weapon(const std::string& name, std::string description, sf::Vector2f coords, sf::Texture* texture): Weapon(name, std::move(description), coords, texture) {};
     Artifact_weapon* clone() override{ return new Artifact_weapon(*this); }
+    ~Artifact_weapon() override = default;
 };
 
 
@@ -221,6 +223,7 @@ public:
     float get_buf_damage(){ return this->get_tb().get_val("buf_damage"); };
     float get_debuf_damage(){ return this->get_tb().get_val("debuf_damage"); };
     Enchanted_weapon* clone() override{ return new Enchanted_weapon(*this); };
+    ~Enchanted_weapon() override = default;
 };
 
 class E_A_weapon: public virtual Enchanted_weapon, public virtual Artifact_weapon{
@@ -229,6 +232,7 @@ public:
                                                                                                             Artifact_weapon(name, description, coords, texture),
                                                                                                             Enchanted_weapon( name, description, coords, buf, debuf, texture){};
     E_A_weapon* clone() override{ return new E_A_weapon(*this); };
+    ~E_A_weapon() override = default;
 };
 
 
@@ -238,6 +242,7 @@ public:
     Door(sf::Vector2f coords, sf::Texture* texture): Item("door", "locked", coords, texture){};
     std::string get_hud_text() override;
     Door* clone() override{ return new Door(*this); };
+    ~Door() override = default;
 };
 
 
@@ -245,6 +250,7 @@ class Lockpick: public Item{
 public:
     Lockpick(sf::Vector2f coords, sf::Texture* texture): Item("lockpick", "you can open door\nwith me", coords, texture){};
     Lockpick* clone() override{ return new Lockpick(*this); };
+    ~Lockpick() override = default;
 };
 
 #endif //LAB3_REFACTORED_ITEM_H

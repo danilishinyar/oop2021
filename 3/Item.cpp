@@ -27,6 +27,7 @@ float Potion::get_param() {
         return this->get_tb().get_val("hp");
     if(this->type == 1)
         return this->get_tb().get_val("speed");
+    return 0.f;
 };
 void Potion::set_param(float a) {
     if(this->type == 0)

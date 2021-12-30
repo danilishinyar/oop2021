@@ -6,7 +6,7 @@ class Tile {
 private:
     sf::Vector2f coords;
     sf::RectangleShape rect;
-    int type;//0-field 1-wall 2-enemy
+    int type;
     sf::IntRect frame;
     bool is_animated;
     sf::Clock clock;

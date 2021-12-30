@@ -36,6 +36,7 @@ private:
     void handle_input(sf::Keyboard::Key key, bool is_pressed);
 public:
     Game_manager();
+    ~Game_manager() = default;
     Item* player_near_item();
     void choose_event();//chooses what to do (close/press/release key)
     void update_player(sf::Time deltaTime);//updating movement and etc

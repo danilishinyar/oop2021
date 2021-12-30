@@ -1,0 +1,89 @@
+\hypertarget{_item_8h_source}{}\doxysection{Item.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef LAB3\_REFACTORED\_ITEM\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define LAB3\_REFACTORED\_ITEM\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}Characteristics.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}Tile.h"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_item}{Item}} \{}
+\DoxyCodeLine{11 \textcolor{keyword}{private}:}
+\DoxyCodeLine{12     \mbox{\hyperlink{class_characteristics}{Characteristics<std::string, float>}} tb; }
+\DoxyCodeLine{13     std::string name; }
+\DoxyCodeLine{14     std::string description; }
+\DoxyCodeLine{15     \mbox{\hyperlink{class_tile}{Tile}} tile; }
+\DoxyCodeLine{16 \textcolor{keyword}{public}:}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_item_a297720c02984eab37332ae795d22189d}{Item}}():tb(), tile(\mbox{\hyperlink{class_tile}{Tile}}()) \{\}; }
+\DoxyCodeLine{25     \mbox{\hyperlink{class_item_a7865acede2b849a02095fff5bcb2be0f}{Item}}(std::string name, std::string description, sf::Vector2f coords, \textcolor{keyword}{const} std::string\& appendix):  name(std::move(name)), description(std::move(description)), tile(coords, sf::Color::Black, 7), tb(appendix + name)\{\};}
+\DoxyCodeLine{29     std::string \mbox{\hyperlink{class_item_a2ba411f27235d4061d28569d59b74d41}{get\_name}}()\{ \textcolor{keywordflow}{return} this-\/>name; \};}
+\DoxyCodeLine{33     std::string \mbox{\hyperlink{class_item_a8652cab970af5b7ff68bf960a4e98fa2}{get\_description}}()\{ \textcolor{keywordflow}{return} this-\/>description; \};}
+\DoxyCodeLine{37     \mbox{\hyperlink{class_characteristics}{Characteristics<std::string, float>}}\& \mbox{\hyperlink{class_item_ac5d7b4e7ff28457c7cfc749f7aef2871}{get\_tb}}()\{ \textcolor{keywordflow}{return} this-\/>tb; \};}
+\DoxyCodeLine{41     \mbox{\hyperlink{class_tile}{Tile}}\& \mbox{\hyperlink{class_item_a2af96b76a0493908236492c97aa39514}{get\_tile}}() \{ \textcolor{keywordflow}{return} this-\/>tile; \};}
+\DoxyCodeLine{45     \textcolor{keyword}{virtual} std::string \mbox{\hyperlink{class_item_a87130f388430aa0849360cede9de3ff3}{get\_hud\_text}}()\{ \textcolor{keywordflow}{return} this-\/>name; \};}
+\DoxyCodeLine{49     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_item}{Item}}* \mbox{\hyperlink{class_item_a4bfb47cbeb69689247d9ad06bf11ae0d}{clone}}() = 0;}
+\DoxyCodeLine{50     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_item}{\string~Item}}() = \textcolor{keywordflow}{default};;}
+\DoxyCodeLine{51 \};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{60 \textcolor{keyword}{class }\mbox{\hyperlink{class_weapon}{Weapon}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_item}{Item}}\{}
+\DoxyCodeLine{61 \textcolor{keyword}{public}:}
+\DoxyCodeLine{62     \mbox{\hyperlink{class_weapon}{Weapon}}(): \mbox{\hyperlink{class_item_a297720c02984eab37332ae795d22189d}{Item}}() \{\}; }
+\DoxyCodeLine{69     \mbox{\hyperlink{class_weapon_a2cf2fd1d2755d9cbe46ce6fc8788b4e8}{Weapon}}(\textcolor{keyword}{const} std::string name, std::string description, sf::Vector2f coords): \mbox{\hyperlink{class_item}{Item}}(name, std::move(description), coords, \textcolor{stringliteral}{"{}weapon/"{}})\{}
+\DoxyCodeLine{70         this-\/>\mbox{\hyperlink{class_item_a2af96b76a0493908236492c97aa39514}{get\_tile}}().get\_rect().setFillColor(sf::Color::Magenta);}
+\DoxyCodeLine{71         this-\/>\mbox{\hyperlink{class_item_a2af96b76a0493908236492c97aa39514}{get\_tile}}().set\_type(8);}
+\DoxyCodeLine{72     \};}
+\DoxyCodeLine{77     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_weapon_aaa600ee4b9c651945aa3130a6adad849}{get\_damage}}() \{ \textcolor{keywordflow}{return} this-\/>\mbox{\hyperlink{class_item_ac5d7b4e7ff28457c7cfc749f7aef2871}{get\_tb}}().get\_val(\textcolor{stringliteral}{"{}damage"{}}); \};}
+\DoxyCodeLine{81     std::string \mbox{\hyperlink{class_weapon_aa2daf656e9d84c8c32c2261858518e63}{get\_hud\_text}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{85     \mbox{\hyperlink{class_weapon}{Weapon}}* \mbox{\hyperlink{class_weapon_af0549b74a9011f346d588ff8aaffad87}{clone}}()\textcolor{keyword}{ override}\{ \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_weapon}{Weapon}}(*\textcolor{keyword}{this}); \};}
+\DoxyCodeLine{86     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_weapon}{\string~Weapon}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{87 \};}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{keyword}{class }\mbox{\hyperlink{class_armor}{Armor}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_item}{Item}}\{}
+\DoxyCodeLine{90 \textcolor{keyword}{private}:}
+\DoxyCodeLine{91     \textcolor{keywordtype}{int} type;}
+\DoxyCodeLine{92 \textcolor{keyword}{public}:}
+\DoxyCodeLine{93     \mbox{\hyperlink{class_armor_a23323e95bbeb488eb6fe54cbd83d49a2}{Armor}}(): \mbox{\hyperlink{class_item}{Item}}(), type(0) \{\};}
+\DoxyCodeLine{101     \mbox{\hyperlink{class_armor_ab0bcb3f184f0628524db07e82ff4cfbb}{Armor}}(\textcolor{keyword}{const} std::string name, std::string description, sf::Vector2f coords, \textcolor{keywordtype}{int} type): \mbox{\hyperlink{class_item}{Item}}(name, std::move(description), coords, \textcolor{stringliteral}{"{}armor/"{}}), type(type)\{}
+\DoxyCodeLine{102         this-\/>type = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(this-\/>\mbox{\hyperlink{class_item_ac5d7b4e7ff28457c7cfc749f7aef2871}{get\_tb}}().get\_val(\textcolor{stringliteral}{"{}type"{}}));}
+\DoxyCodeLine{103         this-\/>\mbox{\hyperlink{class_item_a2af96b76a0493908236492c97aa39514}{get\_tile}}().get\_rect().setFillColor(sf::Color::Yellow);}
+\DoxyCodeLine{104         this-\/>\mbox{\hyperlink{class_item_a2af96b76a0493908236492c97aa39514}{get\_tile}}().set\_type(9);}
+\DoxyCodeLine{105     \};}
+\DoxyCodeLine{110     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_armor_ab2695f7ec1442fb4508511e9578c247d}{get\_defence}}() \{ \textcolor{keywordflow}{return} this-\/>\mbox{\hyperlink{class_item_ac5d7b4e7ff28457c7cfc749f7aef2871}{get\_tb}}().get\_val(\textcolor{stringliteral}{"{}defence"{}}); \};}
+\DoxyCodeLine{114     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_armor_a8a34ca6768a56b164bf6ca14d2a40e4a}{get\_type}}()\textcolor{keyword}{ const}\{ \textcolor{keywordflow}{return} this-\/>type; \};}
+\DoxyCodeLine{115     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_armor}{\string~Armor}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{116 \};}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 \textcolor{keyword}{class }\mbox{\hyperlink{class_potion}{Potion}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_item}{Item}}\{}
+\DoxyCodeLine{122 \textcolor{keyword}{private}:}
+\DoxyCodeLine{123     \textcolor{keywordtype}{int} type; }
+\DoxyCodeLine{124     \textcolor{keywordtype}{int} state; }
+\DoxyCodeLine{125     sf::Clock clock; }
+\DoxyCodeLine{126 \textcolor{keyword}{public}:}
+\DoxyCodeLine{127     \mbox{\hyperlink{class_potion_a32eb096773bd58c87a95795d55c58684}{Potion}}(): \mbox{\hyperlink{class_item}{Item}}(), type(0), state(0) \{\}; }
+\DoxyCodeLine{135     \mbox{\hyperlink{class_potion_a0f7f232a54d8e4be419ba05f3d07c8e4}{Potion}}(\textcolor{keyword}{const} std::string name, std::string description, sf::Vector2f coords, \textcolor{keywordtype}{int} type): \mbox{\hyperlink{class_item}{Item}}(name, std::move(description), coords, \textcolor{stringliteral}{"{}potions/"{}}), type(type), state(1) \{}
+\DoxyCodeLine{136         this-\/>\mbox{\hyperlink{class_item_a2af96b76a0493908236492c97aa39514}{get\_tile}}().get\_rect().setFillColor(sf::Color::Red);}
+\DoxyCodeLine{137         this-\/>\mbox{\hyperlink{class_item_a2af96b76a0493908236492c97aa39514}{get\_tile}}().set\_type(10);}
+\DoxyCodeLine{138     \};}
+\DoxyCodeLine{142     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_potion_a727e6a4392a40da74de24769e0e5160e}{change\_state}}()\{this-\/>state = 0;\};}
+\DoxyCodeLine{146     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_potion_a51ce6ecef7674fe72eb8cf2ec636862b}{get\_type}}()\textcolor{keyword}{ const}\{ \textcolor{keywordflow}{return} this-\/>type; \};}
+\DoxyCodeLine{150     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_potion_afb52ebd1769e05bf89ac32ab884e6052}{get\_time}}() \{ \textcolor{keywordflow}{return} this-\/>\mbox{\hyperlink{class_item_ac5d7b4e7ff28457c7cfc749f7aef2871}{get\_tb}}().get\_val(\textcolor{stringliteral}{"{}time"{}}); \};}
+\DoxyCodeLine{154     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_potion_a183cb8c1916cae04c9de8323389a94d1}{check\_is\_expired}}()\{ \textcolor{keywordflow}{return} this-\/>clock.getElapsedTime().asSeconds() >= this-\/>\mbox{\hyperlink{class_potion_afb52ebd1769e05bf89ac32ab884e6052}{get\_time}}() \&\& this-\/>\mbox{\hyperlink{class_potion_afb52ebd1769e05bf89ac32ab884e6052}{get\_time}}() != 0.f \&\& this-\/>state == 0; \}}
+\DoxyCodeLine{155     \textcolor{keywordtype}{void} cancel\_potion();}
+\DoxyCodeLine{159     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_potion_a6d1d7bf2879353d87c4fd69437f92064}{get\_param}}();}
+\DoxyCodeLine{163     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_potion_a00f21e089280d91579d850833cfa12bf}{set\_param}}(\textcolor{keywordtype}{float} a);}
+\DoxyCodeLine{167     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_potion_aa5fe0503e50cdb9bb09c4d9374761d2c}{restart\_clock}}() \{ this-\/>clock.restart(); \};}
+\DoxyCodeLine{171     std::string \mbox{\hyperlink{class_potion_a8fc51708159a0b5556c40c5f82da5439}{get\_hud\_text}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{175     \mbox{\hyperlink{class_potion}{Potion}}* \mbox{\hyperlink{class_potion_a95e44e02875f38b4069a799145900945}{clone}}()\textcolor{keyword}{ override}\{ \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_potion_a32eb096773bd58c87a95795d55c58684}{Potion}}(*\textcolor{keyword}{this}); \};}
+\DoxyCodeLine{176     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_potion}{\string~Potion}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{177 \};}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//LAB3\_REFACTORED\_ITEM\_H}}
+
+\end{DoxyCode}

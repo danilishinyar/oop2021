@@ -42,4 +42,22 @@ sf::Texture *Texture_manager::get_texture_by_string(std::string name) {
     return this->textures[name + ".png"];
 }
 
+Texture_manager::Texture_manager(const Texture_manager& a) {
+    this->textures.clear();
+    auto it = a.textures.begin();
+    while(it != a.textures.end()){
+        this->textures.insert(*it);
+        it++;
+    }
+}
+
+Texture_manager::Texture_manager(Texture_manager&& a) {
+    this->textures.clear();
+    auto it = a.textures.begin();
+    while(it != a.textures.end()){
+        this->textures.insert(*it);
+        it++;
+    }
+    a.textures.clear();
+}
 

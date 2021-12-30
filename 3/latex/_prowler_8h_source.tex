@@ -1,0 +1,109 @@
+\hypertarget{_prowler_8h_source}{}\doxysection{Prowler.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef LAB3\_REFACTORED\_PROWLER\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define LAB3\_REFACTORED\_PROWLER\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <typeinfo>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}Characteristics.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}SFML/Graphics.hpp"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}Item.h"{}}}
+\DoxyCodeLine{7 \textcolor{comment}{//\#include "{}armor.h"{}}}
+\DoxyCodeLine{8 \textcolor{comment}{//\#include "{}weapon.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}Enemy.h"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}HUD.h"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{class_prowler}{Prowler}}\{}
+\DoxyCodeLine{15 \textcolor{keyword}{private}:}
+\DoxyCodeLine{16     \mbox{\hyperlink{class_characteristics}{Characteristics<std::string, float>}} tb;}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_weapon}{Weapon}} weapon;}
+\DoxyCodeLine{18     \textcolor{comment}{//Armor armor\_head;}}
+\DoxyCodeLine{19     \textcolor{comment}{//Armor armor\_chest;}}
+\DoxyCodeLine{20     \textcolor{comment}{//Armor armor\_legs;}}
+\DoxyCodeLine{21     \textcolor{comment}{//Armor armor\_feet;}}
+\DoxyCodeLine{22     std::vector<Potion> potions;}
+\DoxyCodeLine{23     \textcolor{comment}{// Artifact artifact;}}
+\DoxyCodeLine{24     sf::CircleShape shape;}
+\DoxyCodeLine{25     sf::Vector2f coords;}
+\DoxyCodeLine{26     \textcolor{keywordtype}{char} sign;}
+\DoxyCodeLine{27 \textcolor{keyword}{public}:}
+\DoxyCodeLine{28     \mbox{\hyperlink{class_prowler}{Prowler}}();}
+\DoxyCodeLine{29     \textcolor{comment}{//Accessors}}
+\DoxyCodeLine{30     sf::CircleShape\& get\_shape()\{ \textcolor{keywordflow}{return} this-\/>shape; \};}
+\DoxyCodeLine{31     \mbox{\hyperlink{class_characteristics}{Characteristics<std::string, float>}}\& get\_characteristics() \{ \textcolor{keywordflow}{return} this-\/>tb; \}}
+\DoxyCodeLine{32     \textcolor{keywordtype}{float} get\_cur\_hp()\{ \textcolor{keywordflow}{return} this-\/>tb.\mbox{\hyperlink{class_characteristics_a953da693ee48c24fdea8a73b06056eb7}{get\_val}}(\textcolor{stringliteral}{"{}cur\_hp"{}}); \};}
+\DoxyCodeLine{33     \textcolor{keywordtype}{float} get\_max\_hp()\{ \textcolor{keywordflow}{return} this-\/>tb.\mbox{\hyperlink{class_characteristics_a953da693ee48c24fdea8a73b06056eb7}{get\_val}}(\textcolor{stringliteral}{"{}max\_hp"{}}); \};}
+\DoxyCodeLine{34     \textcolor{keywordtype}{float} get\_speed()\{ \textcolor{keywordflow}{return} this-\/>tb.\mbox{\hyperlink{class_characteristics_a953da693ee48c24fdea8a73b06056eb7}{get\_val}}(\textcolor{stringliteral}{"{}speed"{}}); \};}
+\DoxyCodeLine{35     \textcolor{keywordtype}{float} get\_lucky()\{ \textcolor{keywordflow}{return} this-\/>tb.\mbox{\hyperlink{class_characteristics_a953da693ee48c24fdea8a73b06056eb7}{get\_val}}(\textcolor{stringliteral}{"{}lucky"{}}); \};}
+\DoxyCodeLine{36     \textcolor{keywordtype}{float} get\_damage()\{ \textcolor{keywordflow}{return} this-\/>tb.\mbox{\hyperlink{class_characteristics_a953da693ee48c24fdea8a73b06056eb7}{get\_val}}(\textcolor{stringliteral}{"{}damage"{}}) * this-\/>tb.\mbox{\hyperlink{class_characteristics_a953da693ee48c24fdea8a73b06056eb7}{get\_val}}(\textcolor{stringliteral}{"{}lucky"{}}); \};}
+\DoxyCodeLine{37     \textcolor{keywordtype}{int} get\_level()\{ \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(this-\/>tb.\mbox{\hyperlink{class_characteristics_a953da693ee48c24fdea8a73b06056eb7}{get\_val}}(\textcolor{stringliteral}{"{}level"{}})); \};}
+\DoxyCodeLine{38     \textcolor{keywordtype}{float} get\_exp()\{ \textcolor{keywordflow}{return} this-\/>tb.\mbox{\hyperlink{class_characteristics_a953da693ee48c24fdea8a73b06056eb7}{get\_val}}(\textcolor{stringliteral}{"{}exp"{}}); \};}
+\DoxyCodeLine{39     \textcolor{keywordtype}{int} get\_exp\_level()\{  \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(this-\/>tb.\mbox{\hyperlink{class_characteristics_a953da693ee48c24fdea8a73b06056eb7}{get\_val}}(\textcolor{stringliteral}{"{}exp\_level"{}})); \};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{comment}{//Armor\& get\_armor\_head();}}
+\DoxyCodeLine{42     \textcolor{comment}{//Armor\& get\_armor\_chest();}}
+\DoxyCodeLine{43     \textcolor{comment}{//Armor\& get\_armor\_legs();}}
+\DoxyCodeLine{44     \textcolor{comment}{//Armor\& get\_armor\_feet();}}
+\DoxyCodeLine{45     sf::Vector2f get\_coords()\{ \textcolor{keywordflow}{return} this-\/>shape.getPosition(); \};}
+\DoxyCodeLine{46     \textcolor{keywordtype}{char} get\_sign()\{ \textcolor{keywordflow}{return} this-\/>sign; \};}
+\DoxyCodeLine{47     std::vector<Potion>\& get\_potions()\{ \textcolor{keywordflow}{return} this-\/>potions; \};}
+\DoxyCodeLine{48     \textcolor{keywordtype}{float} get\_hp\_potions() \{ \textcolor{keywordflow}{return} this-\/>tb.\mbox{\hyperlink{class_characteristics_a953da693ee48c24fdea8a73b06056eb7}{get\_val}}(\textcolor{stringliteral}{"{}hp\_potions"{}}); \};}
+\DoxyCodeLine{49     \textcolor{keywordtype}{float} get\_speed\_potions() \{ \textcolor{keywordflow}{return} this-\/>tb.\mbox{\hyperlink{class_characteristics_a953da693ee48c24fdea8a73b06056eb7}{get\_val}}(\textcolor{stringliteral}{"{}speed\_potions"{}}); \};}
+\DoxyCodeLine{50     \textcolor{comment}{//Modifiers}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     \textcolor{keywordtype}{void} set\_cur\_hp(\textcolor{keywordtype}{float} cur\_hp)\{ this-\/>tb.\mbox{\hyperlink{class_characteristics_ab5da6b82e7e112cceba2c6ff643c13fa}{set}}(\textcolor{stringliteral}{"{}cur\_hp"{}}, cur\_hp); \};}
+\DoxyCodeLine{53     \textcolor{keywordtype}{void} set\_damage(\textcolor{keywordtype}{float} damage)\{ this-\/>tb.\mbox{\hyperlink{class_characteristics_ab5da6b82e7e112cceba2c6ff643c13fa}{set}}(\textcolor{stringliteral}{"{}damage"{}}, damage); \};}
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} set\_speed(\textcolor{keywordtype}{float} speed)\{ this-\/>tb.\mbox{\hyperlink{class_characteristics_ab5da6b82e7e112cceba2c6ff643c13fa}{set}}(\textcolor{stringliteral}{"{}speed"{}}, speed); \};}
+\DoxyCodeLine{55     \textcolor{keywordtype}{void} set\_lucky(\textcolor{keywordtype}{float} lucky)\{ this-\/>tb.\mbox{\hyperlink{class_characteristics_ab5da6b82e7e112cceba2c6ff643c13fa}{set}}(\textcolor{stringliteral}{"{}lucky"{}}, lucky); \};}
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} set\_weapon(\mbox{\hyperlink{class_weapon}{Weapon}}\& weapon1);}
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} increase\_hp\_potions()\{ this-\/>tb.\mbox{\hyperlink{class_characteristics_ab5da6b82e7e112cceba2c6ff643c13fa}{set}}(\textcolor{stringliteral}{"{}hp\_potions"{}}, this-\/>get\_hp\_potions()+1); \};}
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} decrease\_hp\_potions()\{}
+\DoxyCodeLine{59         \textcolor{keywordflow}{if}(this-\/>get\_hp\_potions() != 0.f) \{}
+\DoxyCodeLine{60             this-\/>tb.\mbox{\hyperlink{class_characteristics_ab5da6b82e7e112cceba2c6ff643c13fa}{set}}(\textcolor{stringliteral}{"{}hp\_potions"{}}, this-\/>get\_hp\_potions() -\/ 1);}
+\DoxyCodeLine{61         \}}
+\DoxyCodeLine{62     \};}
+\DoxyCodeLine{63     \textcolor{keywordtype}{void} increase\_speed\_potions()\{ this-\/>tb.\mbox{\hyperlink{class_characteristics_ab5da6b82e7e112cceba2c6ff643c13fa}{set}}(\textcolor{stringliteral}{"{}speed\_potions"{}}, this-\/>get\_speed\_potions()+1); \};}
+\DoxyCodeLine{64     \textcolor{keywordtype}{void} decrease\_speed\_potions()\{}
+\DoxyCodeLine{65         \textcolor{keywordflow}{if}(this-\/>get\_speed\_potions() != 0.f) \{}
+\DoxyCodeLine{66             this-\/>tb.\mbox{\hyperlink{class_characteristics_ab5da6b82e7e112cceba2c6ff643c13fa}{set}}(\textcolor{stringliteral}{"{}speed\_potions"{}}, this-\/>get\_speed\_potions() -\/ 1);}
+\DoxyCodeLine{67         \}}
+\DoxyCodeLine{68     \};}
+\DoxyCodeLine{69     \textcolor{comment}{//void set\_armor\_head(Armor\& armor);}}
+\DoxyCodeLine{70     \textcolor{comment}{//void set\_armor\_chest(Armor\& armor);}}
+\DoxyCodeLine{71     \textcolor{comment}{//void set\_armor\_legs(Armor\& armor);}}
+\DoxyCodeLine{72     \textcolor{comment}{//void set\_armor\_feet(Armor\& armor);}}
+\DoxyCodeLine{73     \textcolor{keywordtype}{void} increase\_exp(\textcolor{keywordtype}{float} exp)\{ this-\/>tb.\mbox{\hyperlink{class_characteristics_ab5da6b82e7e112cceba2c6ff643c13fa}{set}}(\textcolor{stringliteral}{"{}exp"{}}, this-\/>tb.\mbox{\hyperlink{class_characteristics_a953da693ee48c24fdea8a73b06056eb7}{get\_val}}(\textcolor{stringliteral}{"{}exp"{}}) + exp); \};}
+\DoxyCodeLine{74     \textcolor{keywordtype}{void} increase\_level(\textcolor{keywordtype}{float} exp)\{}
+\DoxyCodeLine{75         this-\/>increase\_exp(exp);}
+\DoxyCodeLine{76         \textcolor{keywordflow}{if}(this-\/>get\_exp() >= this-\/>get\_exp\_level()) \{}
+\DoxyCodeLine{77             this-\/>tb.\mbox{\hyperlink{class_characteristics_ab5da6b82e7e112cceba2c6ff643c13fa}{set}}(\textcolor{stringliteral}{"{}exp\_level"{}}, this-\/>tb.\mbox{\hyperlink{class_characteristics_a953da693ee48c24fdea8a73b06056eb7}{get\_val}}(\textcolor{stringliteral}{"{}exp\_level"{}}) * 2);}
+\DoxyCodeLine{78             this-\/>tb.\mbox{\hyperlink{class_characteristics_ab5da6b82e7e112cceba2c6ff643c13fa}{set}}(\textcolor{stringliteral}{"{}level"{}}, this-\/>tb.\mbox{\hyperlink{class_characteristics_a953da693ee48c24fdea8a73b06056eb7}{get\_val}}(\textcolor{stringliteral}{"{}level"{}}) + 1);}
+\DoxyCodeLine{79             this-\/>tb.\mbox{\hyperlink{class_characteristics_ab5da6b82e7e112cceba2c6ff643c13fa}{set}}(\textcolor{stringliteral}{"{}damage"{}}, this-\/>tb.\mbox{\hyperlink{class_characteristics_a953da693ee48c24fdea8a73b06056eb7}{get\_val}}(\textcolor{stringliteral}{"{}damage"{}}) * 1.2);}
+\DoxyCodeLine{80         \}}
+\DoxyCodeLine{81     \};}
+\DoxyCodeLine{82     \textcolor{keywordtype}{void} set\_coords(sf::Vector2f coords1)\{ this-\/>shape.setPosition(coords1); \};}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{comment}{//Funcs}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86     \mbox{\hyperlink{class_item}{Item}}* equip\_item(\mbox{\hyperlink{class_item}{Item}}* item);}
+\DoxyCodeLine{87     \textcolor{keywordtype}{void} drink\_potion(\textcolor{keywordtype}{int} type);}
+\DoxyCodeLine{88     \textcolor{keywordtype}{void} cancel\_potion(\textcolor{keywordtype}{int} i, \textcolor{keywordtype}{int} type)\{}
+\DoxyCodeLine{89         \textcolor{keywordflow}{if}(type == 0)\{}
+\DoxyCodeLine{90             this-\/>set\_cur\_hp(this-\/>get\_cur\_hp() -\/ this-\/>potions[i].get\_param());}
+\DoxyCodeLine{91         \}}
+\DoxyCodeLine{92         \textcolor{keywordflow}{if}(type == 1)\{}
+\DoxyCodeLine{93             this-\/>set\_speed(this-\/>get\_speed() -\/ this-\/>potions[i].get\_param());}
+\DoxyCodeLine{94         \}}
+\DoxyCodeLine{95     \}}
+\DoxyCodeLine{96     \textcolor{keywordtype}{void} exp\_exchange();}
+\DoxyCodeLine{97     \textcolor{keywordtype}{void} take\_damage(\mbox{\hyperlink{class_enemy}{Enemy}}\& enemy);}
+\DoxyCodeLine{98     \textcolor{keywordtype}{bool} is\_alive()\{ \textcolor{keywordflow}{return} this-\/>get\_cur\_hp() > 0; \};}
+\DoxyCodeLine{99 \};}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//LAB3\_REFACTORED\_PROWLER\_H}}
+\DoxyCodeLine{104 }
+
+\end{DoxyCode}

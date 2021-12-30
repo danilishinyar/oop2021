@@ -1,0 +1,242 @@
+\hypertarget{class_characteristics}{}\doxysection{Characteristics\texorpdfstring{$<$}{<} U, T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_characteristics}\index{Characteristics$<$ U, T $>$@{Characteristics$<$ U, T $>$}}
+
+
+Таблица характеристик  
+
+
+
+
+{\ttfamily \#include $<$Characteristics.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_iterator}{Iterator}}$<$ U, T $>$ \mbox{\hyperlink{class_characteristics_ab10b92b2071cfb290355900535198685}{begin}} ()
+\begin{DoxyCompactList}\small\item\em Класс итератор \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_iterator}{Iterator}}$<$ U, T $>$ \mbox{\hyperlink{class_characteristics_a869095a364e8a31ad6b0856a54b58e57}{end}} ()
+\item 
+\mbox{\Hypertarget{class_characteristics_a59ff88bb1f97ccc4882f59e6811b67e7}\label{class_characteristics_a59ff88bb1f97ccc4882f59e6811b67e7}} 
+{\bfseries Characteristics} ()
+\begin{DoxyCompactList}\small\item\em Констурктор по умолчанию (создает пустую таблицу) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_characteristics_ae128bfd0ebeff0681466e93154f6df15}{Characteristics}} (const \mbox{\hyperlink{class_characteristics}{Characteristics}} \&a)
+\begin{DoxyCompactList}\small\item\em Копирующий констуктор \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_characteristics_a1df4203b264ca29676977fe867faeb43}{Characteristics}} (\mbox{\hyperlink{class_characteristics}{Characteristics}} \&\&a) noexcept
+\begin{DoxyCompactList}\small\item\em Перемещающий конструктор \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_characteristics_a1886a3a5e9a41c10b14f2a953d706da4}{Characteristics}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Конструктор \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_characteristics_a763ceec2678f747dea8744c271c3a79b}\label{class_characteristics_a763ceec2678f747dea8744c271c3a79b}} 
+{\bfseries $\sim$\+Characteristics} ()
+\begin{DoxyCompactList}\small\item\em Деструктор \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_cell}{Cell}}$<$ U, T $>$ $\ast$ \mbox{\hyperlink{class_characteristics_a54b2e792dec53db4c46b099ec5374479}{get}} () const
+\begin{DoxyCompactList}\small\item\em Получение массива указателей на элементы таблицы \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_characteristics_ae2abc7db2672886f2091f1d7b246ce9b}{get\+\_\+size}} () const
+\begin{DoxyCompactList}\small\item\em Получение текущего размера таблицы \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{class_characteristics_a953da693ee48c24fdea8a73b06056eb7}{get\+\_\+val}} (const std\+::string \&title)
+\begin{DoxyCompactList}\small\item\em Получение значения по ключу \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_characteristics_ab5da6b82e7e112cceba2c6ff643c13fa}{set}} (const std\+::string \&title, T value)
+\begin{DoxyCompactList}\small\item\em Изменение значения по ключу \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_characteristics}{Characteristics}} \& \mbox{\hyperlink{class_characteristics_a78fbf256919ee764bfd6489dcefbe211}{operator=}} (\mbox{\hyperlink{class_characteristics}{Characteristics}} \&\&a) noexcept
+\begin{DoxyCompactList}\small\item\em Перегруженный опретор присваивания перемещением \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_characteristics}{Characteristics}} \& \mbox{\hyperlink{class_characteristics_ac8fb788156514ff81d42122278b64760}{operator=}} (const \mbox{\hyperlink{class_characteristics}{Characteristics}} \&a)
+\begin{DoxyCompactList}\small\item\em Перегруженный опретор присваивания копированием \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_characteristics_a57865144177391f4feb73b395964c517}\label{class_characteristics_a57865144177391f4feb73b395964c517}} 
+class \mbox{\hyperlink{class_characteristics_a57865144177391f4feb73b395964c517}{Iterator$<$ U, T $>$}}
+\begin{DoxyCompactList}\small\item\em Размер таблицы \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class U, class T$>$\newline
+class Characteristics$<$ U, T $>$}
+Таблица характеристик 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em U} & тип данных ключа \\
+\hline
+{\em T} & тип данных значения \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_characteristics_ae128bfd0ebeff0681466e93154f6df15}\label{class_characteristics_ae128bfd0ebeff0681466e93154f6df15}} 
+\index{Characteristics$<$ U, T $>$@{Characteristics$<$ U, T $>$}!Characteristics@{Characteristics}}
+\index{Characteristics@{Characteristics}!Characteristics$<$ U, T $>$@{Characteristics$<$ U, T $>$}}
+\doxysubsubsection{\texorpdfstring{Characteristics()}{Characteristics()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$class U , class T $>$ \\
+\mbox{\hyperlink{class_characteristics}{Characteristics}}$<$ U, T $>$\+::\mbox{\hyperlink{class_characteristics}{Characteristics}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_characteristics}{Characteristics}}$<$ U, T $>$ \&}]{a }\end{DoxyParamCaption})}
+
+
+
+Копирующий констуктор 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & оъект, который нужно скопировать \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_characteristics_a1df4203b264ca29676977fe867faeb43}\label{class_characteristics_a1df4203b264ca29676977fe867faeb43}} 
+\index{Characteristics$<$ U, T $>$@{Characteristics$<$ U, T $>$}!Characteristics@{Characteristics}}
+\index{Characteristics@{Characteristics}!Characteristics$<$ U, T $>$@{Characteristics$<$ U, T $>$}}
+\doxysubsubsection{\texorpdfstring{Characteristics()}{Characteristics()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$class U , class T $>$ \\
+\mbox{\hyperlink{class_characteristics}{Characteristics}}$<$ U, T $>$\+::\mbox{\hyperlink{class_characteristics}{Characteristics}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_characteristics}{Characteristics}}$<$ U, T $>$ \&\&}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Перемещающий конструктор 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & оъект, который нужно переместить \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_characteristics_a1886a3a5e9a41c10b14f2a953d706da4}\label{class_characteristics_a1886a3a5e9a41c10b14f2a953d706da4}} 
+\index{Characteristics$<$ U, T $>$@{Characteristics$<$ U, T $>$}!Characteristics@{Characteristics}}
+\index{Characteristics@{Characteristics}!Characteristics$<$ U, T $>$@{Characteristics$<$ U, T $>$}}
+\doxysubsubsection{\texorpdfstring{Characteristics()}{Characteristics()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class U , class T $>$ \\
+\mbox{\hyperlink{class_characteristics}{Characteristics}}$<$ U, T $>$\+::\mbox{\hyperlink{class_characteristics}{Characteristics}} (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструктор 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & название файла, из которого нужно выгрузить таблицу \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_characteristics_ab10b92b2071cfb290355900535198685}\label{class_characteristics_ab10b92b2071cfb290355900535198685}} 
+\index{Characteristics$<$ U, T $>$@{Characteristics$<$ U, T $>$}!begin@{begin}}
+\index{begin@{begin}!Characteristics$<$ U, T $>$@{Characteristics$<$ U, T $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily template$<$class U , class T $>$ \\
+\mbox{\hyperlink{class_iterator}{Iterator}}$<$ U, T $>$ \mbox{\hyperlink{class_characteristics}{Characteristics}}$<$ U, T $>$\+::begin}
+
+
+
+Класс итератор 
+
+\begin{DoxyReturn}{Returns}
+Начальный эелемент таблицы 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_characteristics_a869095a364e8a31ad6b0856a54b58e57}\label{class_characteristics_a869095a364e8a31ad6b0856a54b58e57}} 
+\index{Characteristics$<$ U, T $>$@{Characteristics$<$ U, T $>$}!end@{end}}
+\index{end@{end}!Characteristics$<$ U, T $>$@{Characteristics$<$ U, T $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily template$<$class U , class T $>$ \\
+\mbox{\hyperlink{class_iterator}{Iterator}}$<$ U, T $>$ \mbox{\hyperlink{class_characteristics}{Characteristics}}$<$ U, T $>$\+::end}
+
+\begin{DoxyReturn}{Returns}
+Конечный элемент таблицы 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_characteristics_a54b2e792dec53db4c46b099ec5374479}\label{class_characteristics_a54b2e792dec53db4c46b099ec5374479}} 
+\index{Characteristics$<$ U, T $>$@{Characteristics$<$ U, T $>$}!get@{get}}
+\index{get@{get}!Characteristics$<$ U, T $>$@{Characteristics$<$ U, T $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$class U , class T $>$ \\
+\mbox{\hyperlink{struct_cell}{Cell}}$<$ U, T $>$ $\ast$ \mbox{\hyperlink{class_characteristics}{Characteristics}}$<$ U, T $>$\+::get}
+
+
+
+Получение массива указателей на элементы таблицы 
+
+\begin{DoxyReturn}{Returns}
+указатель на начало массива 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_characteristics_ae2abc7db2672886f2091f1d7b246ce9b}\label{class_characteristics_ae2abc7db2672886f2091f1d7b246ce9b}} 
+\index{Characteristics$<$ U, T $>$@{Characteristics$<$ U, T $>$}!get\_size@{get\_size}}
+\index{get\_size@{get\_size}!Characteristics$<$ U, T $>$@{Characteristics$<$ U, T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_size()}{get\_size()}}
+{\footnotesize\ttfamily template$<$class U , class T $>$ \\
+int \mbox{\hyperlink{class_characteristics}{Characteristics}}$<$ U, T $>$\+::get\+\_\+size}
+
+
+
+Получение текущего размера таблицы 
+
+\begin{DoxyReturn}{Returns}
+размер таблицы 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_characteristics_a953da693ee48c24fdea8a73b06056eb7}\label{class_characteristics_a953da693ee48c24fdea8a73b06056eb7}} 
+\index{Characteristics$<$ U, T $>$@{Characteristics$<$ U, T $>$}!get\_val@{get\_val}}
+\index{get\_val@{get\_val}!Characteristics$<$ U, T $>$@{Characteristics$<$ U, T $>$}}
+\doxysubsubsection{\texorpdfstring{get\_val()}{get\_val()}}
+{\footnotesize\ttfamily template$<$class U , class T $>$ \\
+T \mbox{\hyperlink{class_characteristics}{Characteristics}}$<$ U, T $>$\+::get\+\_\+val (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{title }\end{DoxyParamCaption})}
+
+
+
+Получение значения по ключу 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & ключ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+значение 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_characteristics_a78fbf256919ee764bfd6489dcefbe211}\label{class_characteristics_a78fbf256919ee764bfd6489dcefbe211}} 
+\index{Characteristics$<$ U, T $>$@{Characteristics$<$ U, T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Characteristics$<$ U, T $>$@{Characteristics$<$ U, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class U , class T $>$ \\
+\mbox{\hyperlink{class_characteristics}{Characteristics}}$<$ U, T $>$ \& \mbox{\hyperlink{class_characteristics}{Characteristics}}$<$ U, T $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_characteristics}{Characteristics}}$<$ U, T $>$ \&\&}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Перегруженный опретор присваивания перемещением 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & объект,который нужно переместить \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_characteristics_ac8fb788156514ff81d42122278b64760}\label{class_characteristics_ac8fb788156514ff81d42122278b64760}} 
+\index{Characteristics$<$ U, T $>$@{Characteristics$<$ U, T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Characteristics$<$ U, T $>$@{Characteristics$<$ U, T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class U , class T $>$ \\
+\mbox{\hyperlink{class_characteristics}{Characteristics}}$<$ U, T $>$ \& \mbox{\hyperlink{class_characteristics}{Characteristics}}$<$ U, T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_characteristics}{Characteristics}}$<$ U, T $>$ \&}]{a }\end{DoxyParamCaption})}
+
+
+
+Перегруженный опретор присваивания копированием 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & объект,который нужно скопировать \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_characteristics_ab5da6b82e7e112cceba2c6ff643c13fa}\label{class_characteristics_ab5da6b82e7e112cceba2c6ff643c13fa}} 
+\index{Characteristics$<$ U, T $>$@{Characteristics$<$ U, T $>$}!set@{set}}
+\index{set@{set}!Characteristics$<$ U, T $>$@{Characteristics$<$ U, T $>$}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily template$<$class U , class T $>$ \\
+void \mbox{\hyperlink{class_characteristics}{Characteristics}}$<$ U, T $>$\+::set (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{title,  }\item[{T}]{value }\end{DoxyParamCaption})}
+
+
+
+Изменение значения по ключу 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & ключ \\
+\hline
+{\em value} & новое значение \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Characteristics.\+h\end{DoxyCompactItemize}

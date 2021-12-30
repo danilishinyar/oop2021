@@ -1,0 +1,66 @@
+\hypertarget{_enemy_8h_source}{}\doxysection{Enemy.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#ifndef LAB3\_REFACTORED\_ENEMY\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define LAB3\_REFACTORED\_ENEMY\_H}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}Characteristics.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}Tile.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}Enemy\_info.h"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}cmath"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}Item.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_enemy}{Enemy}} \{}
+\DoxyCodeLine{11 \textcolor{keyword}{private}:}
+\DoxyCodeLine{12     \mbox{\hyperlink{class_characteristics}{Characteristics<std::string, float>}} tb;}
+\DoxyCodeLine{13     \mbox{\hyperlink{class_tile}{Tile}} tile;}
+\DoxyCodeLine{14     \mbox{\hyperlink{class_enemy__info}{Enemy\_info}} info;}
+\DoxyCodeLine{15     sf::Clock clock;}
+\DoxyCodeLine{16     std::string name;}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_item}{Item}}* item;}
+\DoxyCodeLine{18 \textcolor{keyword}{public}:}
+\DoxyCodeLine{19     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_enemy}{Enemy}}(sf::Vector2f coords, \textcolor{keywordtype}{char} sign, std::string name, \mbox{\hyperlink{class_item}{Item}}* item);}
+\DoxyCodeLine{20     \textcolor{keywordtype}{void} move(sf::Vector2f player\_coords);}
+\DoxyCodeLine{21     \mbox{\hyperlink{class_enemy}{Enemy}}();}
+\DoxyCodeLine{22     \textcolor{keywordtype}{float} get\_speed() \{ \textcolor{keywordflow}{return} this-\/>tb.\mbox{\hyperlink{class_characteristics_a953da693ee48c24fdea8a73b06056eb7}{get\_val}}(\textcolor{stringliteral}{"{}speed"{}}); \};}
+\DoxyCodeLine{23     \textcolor{keywordtype}{float} get\_cur\_hp() \{ \textcolor{keywordflow}{return} this-\/>tb.\mbox{\hyperlink{class_characteristics_a953da693ee48c24fdea8a73b06056eb7}{get\_val}}(\textcolor{stringliteral}{"{}cur\_hp"{}}); \};}
+\DoxyCodeLine{24     \textcolor{keywordtype}{float} get\_max\_hp() \{ \textcolor{keywordflow}{return} this-\/>tb.\mbox{\hyperlink{class_characteristics_a953da693ee48c24fdea8a73b06056eb7}{get\_val}}(\textcolor{stringliteral}{"{}max\_hp"{}}); \};}
+\DoxyCodeLine{25     \textcolor{keywordtype}{float} get\_damage() \{ \textcolor{keywordflow}{return} this-\/>tb.\mbox{\hyperlink{class_characteristics_a953da693ee48c24fdea8a73b06056eb7}{get\_val}}(\textcolor{stringliteral}{"{}damage"{}}); \};}
+\DoxyCodeLine{26     \textcolor{keywordtype}{float} get\_exp() \{ \textcolor{keywordflow}{return}  this-\/>tb.\mbox{\hyperlink{class_characteristics_a953da693ee48c24fdea8a73b06056eb7}{get\_val}}(\textcolor{stringliteral}{"{}exp"{}}); \}}
+\DoxyCodeLine{27     \mbox{\hyperlink{class_item}{Item}}* get\_item() \{ \textcolor{keywordflow}{return} this-\/>item; \};}
+\DoxyCodeLine{28     \mbox{\hyperlink{class_tile}{Tile}}\& get\_tile() \{ \textcolor{keywordflow}{return} this-\/>tile; \};}
+\DoxyCodeLine{29     \mbox{\hyperlink{class_enemy__info}{Enemy\_info}}\& get\_info() \{ \textcolor{keywordflow}{return} this-\/>info; \};}
+\DoxyCodeLine{30     sf::Time get\_clock() \{ \textcolor{keywordflow}{return} this-\/>clock.getElapsedTime(); \};}
+\DoxyCodeLine{31     sf::Vector2f get\_coords() \{ \textcolor{keywordflow}{return} this-\/>get\_tile().get\_coords(); \};}
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} restart\_clock() \{ this-\/>clock.restart(); \};}
+\DoxyCodeLine{33     \textcolor{keywordtype}{void} set\_hp(\textcolor{keywordtype}{float} hp) \{ this-\/>tb.\mbox{\hyperlink{class_characteristics_ab5da6b82e7e112cceba2c6ff643c13fa}{set}}(\textcolor{stringliteral}{"{}cur\_hp"{}}, hp); \};}
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} set\_speed(\textcolor{keywordtype}{float} speed) \{ this-\/>tb.\mbox{\hyperlink{class_characteristics_ab5da6b82e7e112cceba2c6ff643c13fa}{set}}(\textcolor{stringliteral}{"{}speed"{}}, speed); \};}
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} set\_damage(\textcolor{keywordtype}{float} damage) \{ this-\/>tb.\mbox{\hyperlink{class_characteristics_ab5da6b82e7e112cceba2c6ff643c13fa}{set}}(\textcolor{stringliteral}{"{}damage"{}}, damage); \};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{keywordtype}{void} take\_damage(\textcolor{keywordtype}{float} damage);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keyword}{class }\mbox{\hyperlink{class_enemy__human}{Enemy\_human}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_enemy}{Enemy}}\{}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{keyword}{class }\mbox{\hyperlink{class_enemy__insect}{Enemy\_insect}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_enemy}{Enemy}}\{}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{keyword}{class }\mbox{\hyperlink{class_enemy__ice}{Enemy\_ice}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_enemy}{Enemy}}\{}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{keyword}{class }\mbox{\hyperlink{class_enemy__archer}{Enemy\_archer}}: \textcolor{keyword}{public} \mbox{\hyperlink{class_enemy}{Enemy}}\{}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//LAB3\_REFACTORED\_ENEMY\_}}
+
+\end{DoxyCode}

@@ -1,0 +1,237 @@
+\hypertarget{class_item}{}\doxysection{Item Class Reference}
+\label{class_item}\index{Item@{Item}}
+
+
+Родительский класс для предмета  
+
+
+
+
+{\ttfamily \#include $<$Item.\+h$>$}
+
+Inheritance diagram for Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_item}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_item_a297720c02984eab37332ae795d22189d}\label{class_item_a297720c02984eab37332ae795d22189d}} 
+{\bfseries Item} ()
+\begin{DoxyCompactList}\small\item\em Клетка для отображения на карте \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_item_a7865acede2b849a02095fff5bcb2be0f}{Item}} (std\+::string name, std\+::string description, sf\+::\+Vector2f coords, const std\+::string \&appendix)
+\begin{DoxyCompactList}\small\item\em Конструктор по умолчанию \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_item_a2ba411f27235d4061d28569d59b74d41}{get\+\_\+name}} ()
+\item 
+std\+::string \mbox{\hyperlink{class_item_a8652cab970af5b7ff68bf960a4e98fa2}{get\+\_\+description}} ()
+\item 
+\mbox{\hyperlink{class_characteristics}{Characteristics}}$<$ std\+::string, float $>$ \& \mbox{\hyperlink{class_item_ac5d7b4e7ff28457c7cfc749f7aef2871}{get\+\_\+tb}} ()
+\item 
+\mbox{\hyperlink{class_tile}{Tile}} \& \mbox{\hyperlink{class_item_a2af96b76a0493908236492c97aa39514}{get\+\_\+tile}} ()
+\item 
+virtual std\+::string \mbox{\hyperlink{class_item_a87130f388430aa0849360cede9de3ff3}{get\+\_\+hud\+\_\+text}} ()
+\item 
+virtual \mbox{\hyperlink{class_item}{Item}} $\ast$ \mbox{\hyperlink{class_item_a4bfb47cbeb69689247d9ad06bf11ae0d}{clone}} ()=0
+\begin{DoxyCompactList}\small\item\em Клонирует объект \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_item_a297720c02984eab37332ae795d22189d}\label{class_item_a297720c02984eab37332ae795d22189d}} 
+{\bfseries Item} ()
+\begin{DoxyCompactList}\small\item\em Клетка для отображения на карте \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_item_a7865acede2b849a02095fff5bcb2be0f}{Item}} (std\+::string name, std\+::string description, sf\+::\+Vector2f coords, const std\+::string \&appendix)
+\begin{DoxyCompactList}\small\item\em Конструктор по умолчанию \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_item_a2ba411f27235d4061d28569d59b74d41}{get\+\_\+name}} ()
+\item 
+std\+::string \mbox{\hyperlink{class_item_a8652cab970af5b7ff68bf960a4e98fa2}{get\+\_\+description}} ()
+\item 
+\mbox{\hyperlink{class_characteristics}{Characteristics}}$<$ std\+::string, float $>$ \& \mbox{\hyperlink{class_item_ac5d7b4e7ff28457c7cfc749f7aef2871}{get\+\_\+tb}} ()
+\item 
+\mbox{\hyperlink{class_tile}{Tile}} \& \mbox{\hyperlink{class_item_a2af96b76a0493908236492c97aa39514}{get\+\_\+tile}} ()
+\item 
+virtual std\+::string \mbox{\hyperlink{class_item_a87130f388430aa0849360cede9de3ff3}{get\+\_\+hud\+\_\+text}} ()
+\item 
+virtual \mbox{\hyperlink{class_item}{Item}} $\ast$ \mbox{\hyperlink{class_item_a4bfb47cbeb69689247d9ad06bf11ae0d}{clone}} ()=0
+\begin{DoxyCompactList}\small\item\em Клонирует объект \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Родительский класс для предмета 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_item_a7865acede2b849a02095fff5bcb2be0f}\label{class_item_a7865acede2b849a02095fff5bcb2be0f}} 
+\index{Item@{Item}!Item@{Item}}
+\index{Item@{Item}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{Item()}{Item()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Item\+::\+Item (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::string}]{description,  }\item[{sf\+::\+Vector2f}]{coords,  }\item[{const std\+::string \&}]{appendix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Конструктор по умолчанию 
+
+Конструктор \mbox{\hyperlink{class_item}{Item}}\textquotesingle{}а 
+\begin{DoxyParams}{Parameters}
+{\em name} & Назавание предмета \\
+\hline
+{\em description} & Описание предмета \\
+\hline
+{\em coords} & Координаты предмета на карте \\
+\hline
+{\em appendix} & Название папки с конфигурационными файлами \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_item_a7865acede2b849a02095fff5bcb2be0f}\label{class_item_a7865acede2b849a02095fff5bcb2be0f}} 
+\index{Item@{Item}!Item@{Item}}
+\index{Item@{Item}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{Item()}{Item()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Item\+::\+Item (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::string}]{description,  }\item[{sf\+::\+Vector2f}]{coords,  }\item[{const std\+::string \&}]{appendix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Конструктор по умолчанию 
+
+Конструктор \mbox{\hyperlink{class_item}{Item}}\textquotesingle{}а 
+\begin{DoxyParams}{Parameters}
+{\em name} & Назавание предмета \\
+\hline
+{\em description} & Описание предмета \\
+\hline
+{\em coords} & Координаты предмета на карте \\
+\hline
+{\em appendix} & Название папки с конфигурационными файлами \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_item_a4bfb47cbeb69689247d9ad06bf11ae0d}\label{class_item_a4bfb47cbeb69689247d9ad06bf11ae0d}} 
+\index{Item@{Item}!clone@{clone}}
+\index{clone@{clone}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_item}{Item}} $\ast$ Item\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Клонирует объект 
+
+
+
+Implemented in \mbox{\hyperlink{class_weapon_af0549b74a9011f346d588ff8aaffad87}{Weapon}}, \mbox{\hyperlink{class_potion_a95e44e02875f38b4069a799145900945}{Potion}}, \mbox{\hyperlink{class_weapon_af0549b74a9011f346d588ff8aaffad87}{Weapon}}, and \mbox{\hyperlink{class_potion_a95e44e02875f38b4069a799145900945}{Potion}}.
+
+\mbox{\Hypertarget{class_item_a4bfb47cbeb69689247d9ad06bf11ae0d}\label{class_item_a4bfb47cbeb69689247d9ad06bf11ae0d}} 
+\index{Item@{Item}!clone@{clone}}
+\index{clone@{clone}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_item}{Item}} $\ast$ Item\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Клонирует объект 
+
+
+
+Implemented in \mbox{\hyperlink{class_weapon_af0549b74a9011f346d588ff8aaffad87}{Weapon}}, \mbox{\hyperlink{class_potion_a95e44e02875f38b4069a799145900945}{Potion}}, \mbox{\hyperlink{class_weapon_af0549b74a9011f346d588ff8aaffad87}{Weapon}}, and \mbox{\hyperlink{class_potion_a95e44e02875f38b4069a799145900945}{Potion}}.
+
+\mbox{\Hypertarget{class_item_a8652cab970af5b7ff68bf960a4e98fa2}\label{class_item_a8652cab970af5b7ff68bf960a4e98fa2}} 
+\index{Item@{Item}!get\_description@{get\_description}}
+\index{get\_description@{get\_description}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{get\_description()}{get\_description()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string Item\+::get\+\_\+description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+описание предмета 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_item_a8652cab970af5b7ff68bf960a4e98fa2}\label{class_item_a8652cab970af5b7ff68bf960a4e98fa2}} 
+\index{Item@{Item}!get\_description@{get\_description}}
+\index{get\_description@{get\_description}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{get\_description()}{get\_description()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string Item\+::get\+\_\+description (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+описание предмета 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_item_a87130f388430aa0849360cede9de3ff3}\label{class_item_a87130f388430aa0849360cede9de3ff3}} 
+\index{Item@{Item}!get\_hud\_text@{get\_hud\_text}}
+\index{get\_hud\_text@{get\_hud\_text}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{get\_hud\_text()}{get\_hud\_text()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual std\+::string Item\+::get\+\_\+hud\+\_\+text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+текст с характеристиками и описанием предмета 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_weapon_aa2daf656e9d84c8c32c2261858518e63}{Weapon}}, \mbox{\hyperlink{class_potion_a8fc51708159a0b5556c40c5f82da5439}{Potion}}, \mbox{\hyperlink{class_weapon_aa2daf656e9d84c8c32c2261858518e63}{Weapon}}, and \mbox{\hyperlink{class_potion_a8fc51708159a0b5556c40c5f82da5439}{Potion}}.
+
+\mbox{\Hypertarget{class_item_a87130f388430aa0849360cede9de3ff3}\label{class_item_a87130f388430aa0849360cede9de3ff3}} 
+\index{Item@{Item}!get\_hud\_text@{get\_hud\_text}}
+\index{get\_hud\_text@{get\_hud\_text}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{get\_hud\_text()}{get\_hud\_text()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual std\+::string Item\+::get\+\_\+hud\+\_\+text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+текст с характеристиками и описанием предмета 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_weapon_aa2daf656e9d84c8c32c2261858518e63}{Weapon}}, \mbox{\hyperlink{class_potion_a8fc51708159a0b5556c40c5f82da5439}{Potion}}, \mbox{\hyperlink{class_weapon_aa2daf656e9d84c8c32c2261858518e63}{Weapon}}, and \mbox{\hyperlink{class_potion_a8fc51708159a0b5556c40c5f82da5439}{Potion}}.
+
+\mbox{\Hypertarget{class_item_a2ba411f27235d4061d28569d59b74d41}\label{class_item_a2ba411f27235d4061d28569d59b74d41}} 
+\index{Item@{Item}!get\_name@{get\_name}}
+\index{get\_name@{get\_name}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{get\_name()}{get\_name()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string Item\+::get\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+название предмета 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_item_a2ba411f27235d4061d28569d59b74d41}\label{class_item_a2ba411f27235d4061d28569d59b74d41}} 
+\index{Item@{Item}!get\_name@{get\_name}}
+\index{get\_name@{get\_name}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{get\_name()}{get\_name()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string Item\+::get\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+название предмета 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_item_ac5d7b4e7ff28457c7cfc749f7aef2871}\label{class_item_ac5d7b4e7ff28457c7cfc749f7aef2871}} 
+\index{Item@{Item}!get\_tb@{get\_tb}}
+\index{get\_tb@{get\_tb}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{get\_tb()}{get\_tb()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_characteristics}{Characteristics}}$<$ std\+::string, float $>$ \& Item\+::get\+\_\+tb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+таблицу характеристик 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_item_ac5d7b4e7ff28457c7cfc749f7aef2871}\label{class_item_ac5d7b4e7ff28457c7cfc749f7aef2871}} 
+\index{Item@{Item}!get\_tb@{get\_tb}}
+\index{get\_tb@{get\_tb}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{get\_tb()}{get\_tb()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_characteristics}{Characteristics}}$<$ std\+::string, float $>$ \& Item\+::get\+\_\+tb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+таблицу характеристик 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_item_a2af96b76a0493908236492c97aa39514}\label{class_item_a2af96b76a0493908236492c97aa39514}} 
+\index{Item@{Item}!get\_tile@{get\_tile}}
+\index{get\_tile@{get\_tile}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{get\_tile()}{get\_tile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_tile}{Tile}} \& Item\+::get\+\_\+tile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+клетку, отображаемую на игровой карте 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_item_a2af96b76a0493908236492c97aa39514}\label{class_item_a2af96b76a0493908236492c97aa39514}} 
+\index{Item@{Item}!get\_tile@{get\_tile}}
+\index{get\_tile@{get\_tile}!Item@{Item}}
+\doxysubsubsection{\texorpdfstring{get\_tile()}{get\_tile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_tile}{Tile}} \& Item\+::get\+\_\+tile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+клетку, отображаемую на игровой карте 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Item.\+h\item 
+tmp.\+cpp\end{DoxyCompactItemize}

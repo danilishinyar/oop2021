@@ -179,15 +179,16 @@ Characteristics<U, T>::Characteristics(const std::string& filename) {
 
 template <class U, class T>
 Characteristics<U, T>::Characteristics(const Characteristics<U, T> &a) {
-    size = a.size;
-    tb = new Cell<U, T>[(a.size / 5 + 1) * 5];
+    this->size = a.size;
+    this->tb = new Cell<U, T>[(a.size / 5 + 1) * 5];
     memcpy(tb, a.tb, sizeof(Cell<U, T>) * a.size);
 }
 
 template <class U, class T>
 Characteristics<U, T>::Characteristics(Characteristics<U, T> &&a) noexcept{
-    size = a.size;
-    tb = a.tb;
+    delete[] this->tb;
+    this->size = a.size;
+    this->tb = a.tb;
     a.tb = nullptr;
 }
 
@@ -261,9 +262,9 @@ template <class U, class T>
 Characteristics<U, T>& Characteristics<U, T>::operator=(Characteristics<U, T> &&a) noexcept{
     if(this == &a)
         return *this;
-    delete[] tb;
-    size = a.size;
-    tb = a.tb;
+    delete[] this->tb;
+    this->size = a.size;
+    this->tb = a.tb;
     a.size = 0;
     a.tb = nullptr;
     return *this;
@@ -273,10 +274,10 @@ template <class U, class T>
 Characteristics<U, T>& Characteristics<U, T>::operator=(const Characteristics<U, T> &a) {
     if(this == &a)
         return *this;
-    size = a.size;
-    delete[] tb;
-    tb = new Cell<U, T>[a.size];
-    memcpy(tb, a.tb, a.size * sizeof(Cell<U, T>));
+    this->size = a.size;
+    delete[] this->tb;
+    this->tb = new Cell<U, T>[a.size];
+    memcpy(this->tb, a.tb, a.size * sizeof(Cell<U, T>));
     return *this;
 }
 
